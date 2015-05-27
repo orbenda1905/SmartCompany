@@ -23,9 +23,9 @@ private:
 public:
 	Company(string name);
 	void addEmployee(SmartPtr<Employee>& worker);
-    void addProject();
+    void addProject(SmartPtr<Project>& newProject);
     void addProjCicle(string& projId, string& date);
-    void addClient(
+    void addClient(SmartPtr<Client>& newClient);
     void speedUp();
 	~Company();
 
