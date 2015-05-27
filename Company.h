@@ -17,13 +17,17 @@ private:
 	string name;
 	map<SmartPtr<Client>, string> clients;
 	map<SmartPtr<Employee>, string> employees;
-	map<SmartPtr<ProjectCycle>, string> projects;
+	map<SmartPtr<Project>, string> projects;
+    map<SmartPtr<ProjectCycle>, string> cycles;
 
 public:
 	Company(string name);
-//	Company(string name, Client& cList[], Employee& eList[]);
-	void addEmployee();
+	void addEmployee(SmartPtr<Employee>& worker);
+    void addProject();
+    void addProjCicle(string& projId, string& date);
+    void speedUp();
 	~Company();
+    void ForceQuit(string ProjectName);
 
 };
 

@@ -7,7 +7,7 @@
 
 #include "Project.h"
 
-Project::Project(string name, string id, int ttlHrs, int hrsLft, Manager mngr, int progCnt, int artCnt, string pFld,string aFld, map<SmartPtr<Employee>, string>& curList, map<SmartPtr<Employee>, string>& doneList, SmartPtr<Client>& client){
+Project::Project(string name, string id, int ttlHrs, int hrsLft, SmartPtr<Manager>& mngr, int progCnt, int artCnt, vector<string>& pFld,vector<string>& aFld, map<SmartPtr<Employee>, string>& curList, map<SmartPtr<Employee>, string>& doneList, SmartPtr<Client>& client){
 	projectName = name;
 	projId = id;
 	totalHours = ttlHrs;
@@ -29,11 +29,11 @@ void Project::setArtistsNumber(int artistsNumber) {
 	this->artistsNumber = artistsNumber;
 }
 
-FieldArt Project::getArtWorkField() const {
+const vector<string>& Project::getArtWorkField() const {
 	return artWorkField;
 }
 
-void Project::setArtWorkField(FieldArt artWorkField) {
+void Project::setArtWorkField(vector<string>& artWorkField) {
 	this->artWorkField = artWorkField;
 }
 
@@ -71,7 +71,7 @@ void Project::setHoursLeft(int hoursLeft) {
 }
 
 const SmartPtr<Manager>& Project::getManager() const {
-	return *manager;
+	return manager;
 }
 
 void Project::setManager(const SmartPtr<Manager>& manager) {
@@ -86,11 +86,11 @@ void Project::setProgrammersNumber(int programmersNumber) {
 	this->programmersNumber = programmersNumber;
 }
 
-string Project::getProgWorkField() const {
+const vector<string>& Project::getProgWorkField() const {
 	return progWorkField;
 }
 
-void Project::setProgWorkField(string progWorkField) {
+void Project::setProgWorkField(vector<string>& progWorkField) {
 	this->progWorkField = progWorkField;
 }
 
@@ -114,7 +114,6 @@ void Project::setTotalHours(int totalHours) {
 	this->totalHours = totalHours;
 }
 
-void Project::checkFinish()
-{
-
+void Project::checkFinish(){
+    
 }
