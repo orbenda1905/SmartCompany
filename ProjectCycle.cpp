@@ -7,15 +7,18 @@
 
 #include "ProjectCycle.h"
 
-namespace std {
 
-ProjectCycle::ProjectCycle() {
-	// TODO Auto-generated constructor stub
 
+ProjectCycle::ProjectCycle(SmartPtr<Project>& project, string& date) : project(project) {
+    this->date = date;
 }
+
 
 ProjectCycle::~ProjectCycle() {
 	// TODO Auto-generated destructor stub
 }
 
-} /* namespace std */
+
+void ProjectCycle::speedUp(){
+    
+}

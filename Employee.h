@@ -27,7 +27,7 @@ protected:
 public:
 	Employee(const string id, const string& Name, const long phNum, string compId, SmartPtr<Project>& currProj, int TProjH, int THrs, int exp, bool employ, int hrsPDay);
 	string getCompanyId() const;
-	Project& getCurrentProject() const;
+	const SmartPtr<Project>& getCurrentProject() const;
 	int getExperience() const;
 	void setExperience(int experience);
 	int getHoursPerDay() const;
@@ -38,6 +38,7 @@ public:
 	void setTotalHours(int totalHours);
 	int getTotalProjHours() const;
 	void setTotalProjHours(int totalProjHours);
+    void speedUp();
 
 	~Employee();
 };

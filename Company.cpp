@@ -7,21 +7,37 @@
 
 #include "Company.h"
 
-namespace std {
 
 Company::Company(string name) {
 	this->name = name;
 }
 
-//Company::Company(string name, Client& cList[], Employee& eList[])
-//{
-//	this->name = name;
-//	clients = cList;
-//	employees = eList;
-//}
 
-Company::~Company() {
-	// TODO Auto-generated destructor stub
+void Company::addEmployee(SmartPtr<Employee>& worker)
+{
+    
 }
 
-} /* namespace std */
+void Company::speedUp()
+{
+
+    for (map<SmartPtr<ProjectCycle>, string>::iterator it = projects.begin(); it != projects.end(); ++it)
+    {
+//        it->first->speedUp();
+    }
+}
+
+void Company::addProjCicle(string& projId, string& date){
+    if (projects.count(projId) == 1)
+    {
+        SmartPtr<ProjectCycle> cycle = new ProjectCycle(projects.count(projId), date);
+        cycles.emplace(projId, cycles);
+    }
+}
+
+
+Company::~Company() {
+
+}
+
+

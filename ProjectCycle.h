@@ -13,14 +13,16 @@
 
 class ProjectCycle {
 private:
-	Project project;
+	SmartPtr<Project>& project;
 	//date
 	int projEmployees;
-	SmartPtr<Employee> currentProjEmployees;
+    String& date;
+	map<SmartPtr<Employee>, string> currentProjEmployees;
 
 public:
-	ProjectCycle();
+	ProjectCycle(SmartPtr<Project>& project, string& data);
 	virtual ~ProjectCycle();
+    void speedUp();
 };
 
 

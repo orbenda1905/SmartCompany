@@ -7,9 +7,8 @@
 
 #include "Employee.h"
 
-Employee::Employee(const string id, const string& Name, const long phNum, string compId, SmartPtr<Project>& currProj, int TProjH, int THrs, int exp, bool employ, int hrsPDay)
+Employee::Employee(const string id, const string& Name, const long phNum, string compId, SmartPtr<Project>& currProj, int TProjH, int THrs, int exp, bool employ, int hrsPDay) : Person(id, Name, phNum)
 {
-	Person(id, Name, phNum);
 	companyId = compId;
 	currentProject = currProj;
 	totalProjHours = TProjH;
@@ -24,7 +23,7 @@ string Employee::getCompanyId() const {
 	return companyId;
 }
 
-Project& Employee::getCurrentProject() const {
+const SmartPtr<Project>& Employee::getCurrentProject() const {
 	return currentProject;
 }
 
@@ -66,5 +65,9 @@ int Employee::getTotalProjHours() const {
 
 void Employee::setTotalProjHours(int totalProjHours) {
 	this->totalProjHours = totalProjHours;
+}
+
+void Employee::speedUp(){
+    
 }
 

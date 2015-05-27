@@ -34,11 +34,11 @@ private:
 	SmartPtr<Client> client;
 
 public:
-	Project(string name, string id, int ttlHrs, int hrsLft, Manager mngr, int progCnt, int artCnt, vector<string>& pFld,vector<string>& aFld, map<SmartPtr<Employee>, string>& curList, map<SmartPtr<Employee>, string>& doneList, SmartPtr<Client>& client);
+	Project(string name, string id, int ttlHrs, int hrsLft, SmartPtr<Manager>& mngr, int progCnt, int artCnt, vector<string>& pFld,vector<string>& aFld, map<SmartPtr<Employee>, string>& curList, map<SmartPtr<Employee>, string>& doneList, SmartPtr<Client>& client);
 	int getArtistsNumber() const;
 	void setArtistsNumber(int artistsNumber);
-	FieldArt getArtWorkField() const;
-	void setArtWorkField(FieldArt artWorkField);
+	const vector<string>& getArtWorkField() const;
+	void setArtWorkField(vector<string>& artWorkField);
 	const SmartPtr<Client>& getClient() const;
 	void setClient(const SmartPtr<Client>& client);
 	const map<SmartPtr<Employee>, string>& getCurWorkers() const;
@@ -51,8 +51,8 @@ public:
 	void setManager(const SmartPtr<Manager>& manager);
 	int getProgrammersNumber() const;
 	void setProgrammersNumber(int programmersNumber);
-	string getProgWorkField() const;
-	void setProgWorkField(string progWorkField);
+	const vector<string>& getProgWorkField() const;
+	void setProgWorkField(vector<string>& progWorkField);
 	const string& getProjectName() const;
 	void setProjectName(const string& projectName);
 	const string& getProjId() const;
