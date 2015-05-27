@@ -30,8 +30,8 @@ void Company::speedUp()
 void Company::addProjCicle(string& projId, string& date){
     if (projects.count(projId) == 1)
     {
-        SmartPtr<ProjectCycle> cycle = new ProjectCycle(projects.at(projId), date);
-        cycles.emplace(cycles, projId);
+        SmartPtr<ProjectCycle> cycle = new ProjectCycle(projects.count(projId), date);
+        cycles.a
     }
 }
 
@@ -67,6 +67,15 @@ void Company::addClient(SmartPtr<Client>& newClient)
 
 Company::~Company() {
 
+}
+void Company::ForceQuit(string ProjectName){
+    
+    if (cycles.count(ProjectName)==1) {
+        cycles.count(ProjectName)->remove()
+    }
+    
+    
+    
 }
 
 

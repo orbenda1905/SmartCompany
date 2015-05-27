@@ -16,9 +16,9 @@ class Company {
 private:
 	string name;
 	map<SmartPtr<Client>, string> clients;
-	map<string, SmartPtr<Employee>> employees;
-	map<string, SmartPtr<Project>> projects;
-    map<string, SmartPtr<ProjectCycle>> cycles;
+	map<SmartPtr<Employee>, string> employees;
+	map<SmartPtr<Project>, string> projects;
+    map<SmartPtr<ProjectCycle>, string> cycles;
 
 public:
 	Company(string name);
@@ -28,6 +28,7 @@ public:
     void addClient(SmartPtr<Client>& newClient);
     void speedUp();
 	~Company();
+    void ForceQuit(string ProjectName);
 
 };
 
