@@ -30,8 +30,8 @@ void Company::speedUp()
 void Company::addProjCicle(string& projId, string& date){
     if (projects.count(projId) == 1)
     {
-        SmartPtr<ProjectCycle> cycle = new ProjectCycle(projects.count(projId), date);
-        cycles.emplace(projId, cycles);
+        SmartPtr<ProjectCycle> cycle = new ProjectCycle(projects.at(projId), date);
+        cycles.emplace(cycles, projId);
     }
 }
 
