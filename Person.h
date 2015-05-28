@@ -22,13 +22,14 @@ protected:
 	long phoneNumber;
 	
 public:
+    Person();
 	Person(const string id, const string& Name, const long phNum);
 	virtual ~Person();
 	const string& getName() const;
 	void setName(const string& Name);
-	string getId() const;
-	long getPhoneNumber() const;
-	void setPhoneNumber(long phoneNumber);
+	const string getId() const;
+	const long getPhoneNumber() const;
+	void setPhoneNumber(const long phoneNumber) ;
 };
 
 #endif /* PERSON_H_ */

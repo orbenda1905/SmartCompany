@@ -7,6 +7,11 @@
 
 #include "Person.h"
 
+Person::Person()
+{
+    
+}
+
 Person::Person(const string id, const string& Name, const long phNum) {
 	this->id = id;
 	name = Name;
@@ -21,15 +26,15 @@ void Person::setName(const string& Name) {
 	this->name = Name;
 }
 
-string Person::getId() const {
+const string Person::getId() const {
 	return id;
 }
 
-long Person::getPhoneNumber() const {
+const long Person::getPhoneNumber() const {
 	return phoneNumber;
 }
 
-void Person::setPhoneNumber(long phoneNumber) {
+void Person::setPhoneNumber(const long phoneNumber) {
 	this->phoneNumber = phoneNumber;
 }
 

@@ -16,21 +16,28 @@ class Company {
 private:
 	string name;
 	map<SmartPtr<Client>, string> clients;
-	map<string, SmartPtr<Employee>> employees;
-	map<string, SmartPtr<Project>> projects;
-    map<string, SmartPtr<ProjectCycle>> cycles;
+	map<SmartPtr<Employee>, string> employees;
+	map<SmartPtr<Project>, string> projects;
+    map<SmartPtr<ProjectCycle>, string> cycles;
 
 public:
 	Company(string name);
-	void addEmployee(SmartPtr<Employee>& worker);
-    void addProject();
+	void addEmployee(SmartPtr<Employee>& newWorker);
+    void addProject(SmartPtr<Project>& newProject);
     void addProjCicle(string& projId, string& date);
-    void addClient(
+    void addClient(SmartPtr<Client>& newClient);
+    bool checkIfProjectExist(string& projId);
+    bool checkIfClientExist(string& clientId);
+    bool CheckIfEmployeeExist(string& empId);
+    bool checkifCycleExist(string& projId);
     void speedUp();
+    void startArrange();
 	~Company();
+    void ForceQuit(string ProjectName);
 
 };
 
 
 
 #endif /* COMPANY_H_ */
+//itay
