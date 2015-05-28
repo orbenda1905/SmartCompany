@@ -6,13 +6,21 @@
  */
 
 #include "Reader.h"
+#include <fstream>
+#include <sstream>
+
+using namespace::std;
+
+Reader::Reader(const char *file_name){
+    
+}
 
 Reader::Reader() {
-	// TODO Auto-generated constructor stub
+	
 
 }
 
 Reader::~Reader() {
-	// TODO Auto-generated destructor stub
+	
 }
 
