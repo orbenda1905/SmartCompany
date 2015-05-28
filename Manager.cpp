@@ -22,6 +22,9 @@ Manager::~Manager() {
 }
 
 void Manager::Printmanger(){
+    LogFile<<"The project count:"<<projCount<<endl;
+    LogFile<<"Total Projects:"<<totalProjects<<endl;
+    
     cout<<"The project count:"<<projCount<<endl;
     cout<<"Total Projects:"<<totalProjects<<endl;
     PrintPerson();

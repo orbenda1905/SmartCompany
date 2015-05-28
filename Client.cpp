@@ -24,4 +24,8 @@ void Client::PrintClient(){
     
     cout<<"client total projects:"<<totalProjcets<<endl;
     cout<<"The client current project"<<currentProjectId<<endl;
+    
+    LogFile<<"client total projects:"<<totalProjcets<<endl;
+    LogFile<<"The client current project"<<currentProjectId<<endl;
+    
 }

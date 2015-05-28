@@ -72,4 +72,21 @@ cout<<"The programmer knowd languges:"<<endl;
         cout << knowedLangs[i] <<",";
     }
 
+    
+    PrintPerson();
+    LogFile<<getCompanyId()<<endl;
+    LogFile<<"Total Hours:"<<getTotalHours()<<endl;
+    LogFile<<"Experience:"<<getExperience()<<endl;
+    LogFile<<"Total project hours"<<getTotalProjHours()<<endl;
+    LogFile<<"Hours per day"<<getHoursPerDay()<<endl;
+    LogFile<<"Current project ID"<<getCurrentProjectId()<<endl;
+    LogFile<<"Total project work"<<getTotalprojwork()<<endl;
+    LogFile<<"The Programmer field:"<<endl;
+    for (int i=0; i<fields.size();i++){
+        LogFile << fields[i] <<",";
+    }
+    LogFile<<"The programmer knowd languges:"<<endl;
+    for (int i=0; i<knowedLangs.size();i++){
+        LogFile << knowedLangs[i] <<",";
+    }
 }

@@ -13,7 +13,7 @@ using namespace std;
 
 
 
-class Person {
+class Person : public WriteTofile {
 private:
 	string id;
 protected:

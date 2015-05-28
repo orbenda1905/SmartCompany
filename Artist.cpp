@@ -41,7 +41,8 @@ void Artist::PrintArtist(){
     
 }
 void  Artist::Print(){
-   
+
+    
     PrintPerson();
     cout<<getCompanyId()<<endl;
     cout<<"Total Hours:"<<getTotalHours()<<endl;
@@ -54,6 +55,20 @@ void  Artist::Print(){
     for (int i=0; i<fields.size();i++){
         cout << fields[i] << endl;
     }
+
     
+    LogFile<<getCompanyId()<<endl;
+    LogFile<<"Total Hours:"<<getTotalHours()<<endl;
+    LogFile<<"Experience:"<<getExperience()<<endl;
+    LogFile<<"Total project hours"<<getTotalProjHours()<<endl;
+    LogFile<<"Hours per day"<<getHoursPerDay()<<endl;
+    LogFile<<"Current project ID"<<getCurrentProjectId()<<endl;
+    LogFile<<"Total project work"<<getTotalprojwork()<<endl;
+    LogFile<<"The artist fieldes are:"<<endl;
+    for (int i=0; i<fields.size();i++){
+        LogFile << fields[i] << endl;
+    }
+ 
 }
+
 

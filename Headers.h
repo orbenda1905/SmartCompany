@@ -10,12 +10,24 @@
 #include <iostream>
 #include <map>
 #include <vector>
+#include <fstream>
+#include "WriteToFile.h"
 using namespace std;
 
 typedef enum FieldProg {FEND, SEC, MBL, BEND} FieldProg;
 typedef enum FieldArt {TwoD, ThreeD, MSC, CRTV} FieldArt;
 typedef enum ProgLang {C, CPP, JAVA, HTML} ProgLang;
 
+void WriteToFile(string OutToFile){
+    ofstream LogFile;
+    LogFile.open("Logger.txt", ios_base::app);
+    if (LogFile.is_open())
+    {
+        LogFile << OutToFile;
+        LogFile.close();
+    }
+    else cout << "Unable to open file";
+}
 
 
 

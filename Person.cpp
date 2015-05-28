@@ -48,4 +48,13 @@ void Person::PrintPerson()
     cout<<"ID:"<<getId()<<endl;
     cout<<"Name:"<<getName()<<endl;
     cout<<"Phone number:"<<getPhoneNumber()<<endl;
+    
+    WriteTofile();
+    LogFile<<"ID:"<<getId()<<endl;
+    LogFile<<"Name:"<<getName()<<endl;
+    LogFile<<"Phone number:"<<getPhoneNumber()<<endl;
+    ~WriteTofile();
 }
+
+
+

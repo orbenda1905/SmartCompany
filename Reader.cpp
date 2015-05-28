@@ -29,8 +29,6 @@ Reader::Reader(const char* file_name){
     
     
     
-    
-    
 }
 
 vector<string> Reader::split(const string s, char c){
