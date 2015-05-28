@@ -11,7 +11,6 @@
 #include "Headers.h"
 #include "Artist.h"
 #include "Programmer.h"
-#include "Project.h"
 
 using namespace std;
 
@@ -20,7 +19,7 @@ private:
 	int projCount;
 	int totalProjects;
 public:
-	Manager(const string id, const string& Name, const long phNum, string compId, SmartPtr<Project>& currProj, int TProjH, int THrs, int exp, bool employ, int hrsPDay, vector<string>& knwdP, vector<string>& fieldP, vector<string>& fieldA);
+	Manager(const string id, const string& Name, const long phNum, string compId, string *currProj, int TProjH, int THrs, int exp, bool employ, int hrsPDay, vector<string>& knwdP, vector<string>& fieldP, vector<string>& fieldA);
 	virtual ~Manager();
     void Printmanger();
 

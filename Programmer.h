@@ -24,10 +24,10 @@ public:
     Programmer();
 	Programmer(const string id, const string& Name, const long phNum, string compId, string *currProj, int TProjH, int THrs, int exp, bool employ, int hrsPDay, vector<string>& langs, vector<string>& flds);
 	virtual ~Programmer();
-	const vector<string>& getFields() const;
-	const vector<string>& getKnowedLangs() const;
+	virtual vector<string>& getFields();
+	virtual vector<string>& getKnowedLangs();
 	void setKnowedLangs(vector<string>& langs);
-	void setFields(vector<string>& field);
+	virtual void setFields(vector<string>& field);
     void Print();
 };
 

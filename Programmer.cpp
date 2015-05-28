@@ -21,11 +21,11 @@ Programmer::Programmer(const string id, const string& Name, const long phNum, st
 
 }
 
-const vector<string>& Programmer::getFields() const {
+vector<string>& Programmer::getFields() {
 	return fields;
 }
 
-const vector<string>& Programmer::getKnowedLangs() const {
+vector<string>& Programmer::getKnowedLangs() {
 	return knowedLangs;
 }
 
