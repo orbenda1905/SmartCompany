@@ -30,5 +30,5 @@ void Manager::Printmanger(){
     
     
     
-}
+}//sometjing
 
