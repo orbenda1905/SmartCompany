@@ -47,6 +47,7 @@ void Company::addProjCycle(string& projId, string& date){
         SmartPtr<ProjectCycle> cycle = new ProjectCycle(projects.at(projId), date);
         cycles.emplace(projId, cycle);
     }
+    return;
 }
 
 void Company::addProject(SmartPtr<Project>& newProject)
