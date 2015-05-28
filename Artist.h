@@ -26,6 +26,7 @@ public:
 	virtual vector<string>& getFields();
 	virtual void setFields(vector<string>& fields);
     void Print();
+    void PrintArtist();
 };
 
 #endif /* ARTIST_H_ */

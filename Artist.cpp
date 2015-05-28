@@ -33,6 +33,13 @@ void Artist::setFields(vector<string>& fields) {
 	this->fields = fields;
 }
 
+void Artist::PrintArtist(){
+    cout<<"The artist fieldes are:"<<endl;
+    for (int i=0; i<fields.size();i++){
+        cout << fields[i] << endl;
+    }
+    
+}
 void  Artist::Print(){
    
     PrintPerson();
@@ -49,3 +56,4 @@ void  Artist::Print(){
     }
     
 }
+

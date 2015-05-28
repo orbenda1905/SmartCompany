@@ -13,6 +13,7 @@ Manager::Manager(const string id, const string& Name, const long phNum, string c
         Programmer::setKnowedLangs(knwdP);
         Programmer::setFields(fieldP);
         Artist::setFields(fieldA);
+        
     
 }
 
@@ -21,6 +22,13 @@ Manager::~Manager() {
 }
 
 void Manager::Printmanger(){
+    cout<<"The project count:"<<projCount<<endl;
+    cout<<"Total Projects:"<<totalProjects<<endl;
+    PrintPerson();
+    Artist::Print();
+    Programmer::Print();
+    
+    
     
 }
 

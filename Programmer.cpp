@@ -41,6 +41,18 @@ void Programmer::setFields(vector<string>& field) {
 	this->fields = fields;
 }
 
+void Programmer::PrintProg(){
+    cout<<"The Programmer field:"<<endl;
+    for (int i=0; i<fields.size();i++){
+        cout << fields[i] <<",";
+    }
+    cout<<"The programmer knowd languges:"<<endl;
+    for (int i=0; i<knowedLangs.size();i++){
+        cout << knowedLangs[i] <<",";
+    }
+}
+
+
 void Programmer::Print(){
 
 PrintPerson();

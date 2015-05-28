@@ -29,6 +29,7 @@ public:
 	void setKnowedLangs(vector<string>& langs);
 	virtual void setFields(vector<string>& field);
     void Print();
+    void PrintProg();
 };
 
 
