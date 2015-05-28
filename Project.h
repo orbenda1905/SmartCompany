@@ -29,22 +29,22 @@ private:
 	vector<string> progWorkField;
 	vector<string> artWorkField;
 	SmartPtr<Manager> manager;
-	map<SmartPtr<Employee>, string> curWorkers;
-	map<SmartPtr<Employee>, string> finishedWorkers;
+	map<string, SmartPtr<Employee>> curWorkers;
+	map<string, SmartPtr<Employee>> finishedWorkers;
 	SmartPtr<Client> client;
 
 public:
-	Project(string name, string id, int ttlHrs, int hrsLft, SmartPtr<Manager>& mngr, int progCnt, int artCnt, vector<string>& pFld,vector<string>& aFld, map<SmartPtr<Employee>, string>& curList, map<SmartPtr<Employee>, string>& doneList, SmartPtr<Client>& client);
+	Project(string name, string id, int ttlHrs, int hrsLft, SmartPtr<Manager>& mngr, int progCnt, int artCnt, vector<string>& pFld,vector<string>& aFld, map<string, SmartPtr<Employee>>& curList, map<string, SmartPtr<Employee>>& doneList, SmartPtr<Client>& client);
 	int getArtistsNumber() const;
 	void setArtistsNumber(int artistsNumber);
 	const vector<string>& getArtWorkField() const;
 	void setArtWorkField(vector<string>& artWorkField);
 	const SmartPtr<Client>& getClient() const;
 	void setClient(const SmartPtr<Client>& client);
-	const map<SmartPtr<Employee>, string>& getCurWorkers() const;
-	void setCurWorkers(map<SmartPtr<Employee>, string>& curWorkers);
-	const map<SmartPtr<Employee>, string>& getFinishedWorkers() const;
-	void setFinishedWorkers(const map<SmartPtr<Employee>, string>& finishedWorkers);
+	const map<string, SmartPtr<Employee>>& getCurWorkers() const;
+	void setCurWorkers(map<string, SmartPtr<Employee>>& curWorkers);
+	const map<string, SmartPtr<Employee>>& getFinishedWorkers() const;
+	void setFinishedWorkers(const map<string, SmartPtr<Employee>>& finishedWorkers);
 	int getHoursLeft() const;
 	void setHoursLeft(int hoursLeft);
 	const SmartPtr<Manager>& getManager() const;

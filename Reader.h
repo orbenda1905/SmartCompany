@@ -10,14 +10,14 @@
 #include <iostream>
 #include <fstream>
 #include "Client.h"
-#include "Company.h";
+#include "Company.h"
 
 
 using namespace std;
 
 class Reader {
 public:
-	Reader();
+	Reader(const char *file_name);
     virtual ~Reader();
     
     

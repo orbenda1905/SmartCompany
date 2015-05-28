@@ -9,7 +9,7 @@
 #include <fstream>
 #include <sstream>
 
-using namespace::std;
+using namespace std;
 
 Reader::Reader(const char *file_name){
     

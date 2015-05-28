@@ -16,8 +16,8 @@ private:
 	SmartPtr<Project>& project;
 	//date
 	int projEmployees;
-    String& date;
-	map<SmartPtr<Employee>, string> currentProjEmployees;
+    string& date;
+	map<string, SmartPtr<Employee>> currentProjEmployees;
 
 public:
 	ProjectCycle(SmartPtr<Project>& project, string& data);

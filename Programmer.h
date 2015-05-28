@@ -10,7 +10,8 @@
 
 
 
-#include "Project.h"
+#include "Employee.h"
+#include "Headers.h"
 
 using namespace std;
 
@@ -21,7 +22,7 @@ protected:
 	vector<string> fields;
 public:
     Programmer();
-	Programmer(const string id, const string& Name, const long phNum, string compId, SmartPtr<Project>& currProj, int TProjH, int THrs, int exp, bool employ, int hrsPDay, vector<string>& langs, vector<string>& flds);
+	Programmer(const string id, const string& Name, const long phNum, string compId, string *currProj, int TProjH, int THrs, int exp, bool employ, int hrsPDay, vector<string>& langs, vector<string>& flds);
 	virtual ~Programmer();
 	const vector<string>& getFields() const;
 	const vector<string>& getKnowedLangs() const;

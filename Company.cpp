@@ -15,7 +15,7 @@ Company::Company(string name) {
 
 void Company::addEmployee(SmartPtr<Employee>& newWorker)
 {
-    if (CheckIfEmployeeExist(newWorker->getId()))
+    if (checkIfEmployeeExist(newWorker->getId()))
     {
         cout << "employee already exist" << endl;
         delete newWorker;
@@ -26,27 +26,26 @@ void Company::addEmployee(SmartPtr<Employee>& newWorker)
         employees.emplace(newWorker, newWorker->getId());
     }
     return;
-        
 }
 
 void Company::speedUp()
 {
 
-    for (map<SmartPtr<ProjectCycle>, string>::iterator it = projects.begin(); it != projects.end(); ++it)
+    for (map<string, SmartPtr<ProjectCycle>>::iterator it = cycles.begin(); it != cycles.end(); ++it)
     {
-        it->first->speedUp();
+        it->second->speedUp();
     }
 }
 
-void Company::addProjCicle(string& projId, string& date){
+void Company::addProjCycle(string& projId, string& date){
     if (checkifCycleExist(projId)){
         cout << "project cycle already exist" << endl;
         return;
     }
     if (projects.count(projId) == 1)
     {
-        SmartPtr<ProjectCycle> cycle = new ProjectCycle(projects.count(projId), date);
-        cycles.a
+        SmartPtr<ProjectCycle> cycle = new ProjectCycle(projects.at(projId), date);
+        cycles.emplace(projId, cycle);
     }
 }
 
@@ -60,7 +59,7 @@ void Company::addProject(SmartPtr<Project>& newProject)
     }
     else
     {
-        projects.emplace(newProject, newProject->getProjId());
+        projects.emplace(newProject->getProjId(), newProject);
     }
     return;
 }
@@ -75,7 +74,7 @@ void Company::addClient(SmartPtr<Client>& newClient)
     }
     else
     {
-        clients.emplace(newClient, newClient->getId());
+        clients.emplace(newClient->getId(), newClient);
     }
     return;
 }
@@ -86,13 +85,10 @@ Company::~Company() {
 void Company::ForceQuit(string ProjectName){
     
     if (cycles.count(ProjectName)==1) {
-        cycles.count(ProjectName)->remove()
+        
     }
-    
-    
-    
 }
-
+/*
 void Company::startArrange(){
     //for loop on all the employees and spread them to their projects if needed
     //and then do this:
@@ -106,26 +102,27 @@ void Company::startArrange(){
     //{
     //  projects.at(*temp)->addEmployee(newWorker);
     //}
-}
+}*/
 
-bool Company::checkIfProjectExist(string& projId){
+bool Company::checkIfProjectExist(const string& projId){
     if (projects.count(projId) == 0) return false;
-    if (projects.count(projId) == 1) return true;
+    return true;
+    
 }
 
-bool Company::checkIfClientExist(string& clientId){
+bool Company::checkIfClientExist(const string& clientId){
     if (clients.count(clientId) == 0) return false;
-    if (clients.count(clientId) == 1) return true;
+    return true;
 }
 
-bool Company::CheckIfEmployeeExist(string& empId){
+bool Company::checkIfEmployeeExist(const string& empId){
     if (employees.count(empId) == 0) return false;
-    if (employees.count(empId) == 1) return true;
+    return true;
 }
 
-bool Company::checkIfCycleExist(string& projId){
+bool Company::checkifCycleExist(const string& projId){
     if (cycles.count(projId) == 0) return false;
-    if (cycles.count(projId) == 1) return true;
+    return true;
 }
 
 

@@ -7,7 +7,7 @@
 
 #include "Project.h"
 
-Project::Project(string name, string id, int ttlHrs, int hrsLft, SmartPtr<Manager>& mngr, int progCnt, int artCnt, vector<string>& pFld,vector<string>& aFld, map<SmartPtr<Employee>, string>& curList, map<SmartPtr<Employee>, string>& doneList, SmartPtr<Client>& client){
+Project::Project(string name, string id, int ttlHrs, int hrsLft, SmartPtr<Manager>& mngr, int progCnt, int artCnt, vector<string>& pFld,vector<string>& aFld, map<string, SmartPtr<Employee>>& curList, map<string, SmartPtr<Employee>>& doneList, SmartPtr<Client>& client){
 	projectName = name;
 	projId = id;
 	totalHours = ttlHrs;
@@ -45,20 +45,20 @@ void Project::setClient(const SmartPtr<Client>& client) {
 	this->client = client;
 }
 
-const map<SmartPtr<Employee>, string>& Project::getCurWorkers() const {
+const map<string, SmartPtr<Employee>>& Project::getCurWorkers() const {
 	return curWorkers;
 }
 
-void Project::setCurWorkers(map<SmartPtr<Employee>, string>& curWorkers) {
+void Project::setCurWorkers(map<string, SmartPtr<Employee>>& curWorkers) {
 	this->curWorkers = curWorkers;
 }
 
-const map<SmartPtr<Employee>, string>& Project::getFinishedWorkers() const {
+const map<string, SmartPtr<Employee>>& Project::getFinishedWorkers() const {
 	return finishedWorkers;
 }
 
 void Project::setFinishedWorkers(
-		const map<SmartPtr<Employee>, string>& finishedWorkers) {
+		const map<string, SmartPtr<Employee>>& finishedWorkers) {
 	this->finishedWorkers = finishedWorkers;
 }
 
