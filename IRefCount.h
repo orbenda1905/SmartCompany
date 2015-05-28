@@ -15,4 +15,3 @@ template <class T> class IRefCount
 #endif // IREFCOUNT_H
 
 
-//great!

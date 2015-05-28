@@ -18,5 +18,4 @@ Client::Client(const string id, const string& Name, const long phNum, int tProje
 Client::~Client() {
 	// TODO Auto-generated destructor stub
 }
-
-//gever this is working
+//or is gay
