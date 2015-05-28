@@ -9,13 +9,17 @@
 #define READER_H_
 #include <iostream>
 #include <fstream>
-#include <string.h>
+#include "Client.h"
+#include "Company.h";
+
+
+using namespace std;
 
 class Reader {
 public:
 	Reader();
-	virtual ~Reader();
-    String company_name;
+    virtual ~Reader();
+    
     
 };
 
