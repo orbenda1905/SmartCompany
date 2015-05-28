@@ -46,6 +46,7 @@ void Company::addProjCycle(string& projId, string& date){
     {
         SmartPtr<ProjectCycle> cycle = new ProjectCycle(projects.at(projId), date);
         cycles.emplace(projId, cycle);
+        startCycle(cycle, projId);
     }
     return;
 }
@@ -127,6 +128,11 @@ bool Company::checkifCycleExist(const string& projId){
 }
 
 void Company::PrintCompany(){
+    
+}
+
+void Company::startCycle(SmartPtr<ProjectCycle>& cycle, string& projId)
+{
     
 }
 

@@ -35,6 +35,7 @@ public:
 	~Company();
     void ForceQuit(string ProjectName);
     void PrintCompany();
+    void startCycle(SmartPtr<ProjectCycle>& cylce, string& projId);
 };
 
 
