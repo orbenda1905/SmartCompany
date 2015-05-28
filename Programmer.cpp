@@ -40,4 +40,23 @@ void Programmer::setFields(vector<string>& field) {
 	this->fields = fields;
 }
 
+void Programmer::Print(){
 
+PrintPerson();
+cout<<getCompanyId()<<endl;
+cout<<"Total Hours:"<<getTotalHours()<<endl;
+cout<<"Experience:"<<getExperience()<<endl;
+cout<<"Total project hours"<<getTotalProjHours()<<endl;
+cout<<"Hours per day"<<getHoursPerDay()<<endl;
+cout<<"Current project ID"<<getCurrentProjectId()<<endl;
+cout<<"Total project work"<<getTotalprojwork()<<endl;
+cout<<"The Programmer field:"<<endl;
+    for (int i=0; i<fields.size();i++){
+        cout << fields[i] <<",";
+    }
+cout<<"The programmer knowd languges:"<<endl;
+    for (int i=0; i<knowedLangs.size();i++){
+        cout << knowedLangs[i] <<",";
+    }
+
+}

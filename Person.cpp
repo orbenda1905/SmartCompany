@@ -43,3 +43,9 @@ Person::~Person() {
 }
 
 //change check again and again
+void Person::PrintPerson()
+{
+    cout<<"ID:"<<getId()<<endl;
+    cout<<"Name:"<<getName()<<endl;
+    cout<<"Phone number:"<<getPhoneNumber()<<endl;
+}

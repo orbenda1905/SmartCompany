@@ -18,6 +18,9 @@ private:
 public:
 	Client(const string id, const string& Name, const long phNum, int tProjects, string curProjId);
 	virtual ~Client();
+    void PrintClient();
+
+
 };
 
 #endif /* CLIENT_H_ */

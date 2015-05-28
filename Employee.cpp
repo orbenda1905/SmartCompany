@@ -72,7 +72,7 @@ void Employee::setTotalProjHours(int totalProjHours) {
 	this->totalProjHours = totalProjHours;
 }
 
-void Employee::speedUp(){
-    
+int Employee::getTotalprojwork() const{
+    return totalProjWork;
 }
 

@@ -128,6 +128,8 @@ bool Company::checkIfCycleExist(string& projId){
     if (cycles.count(projId) == 1) return true;
 }
 
-
+void Company::PrintCompany(){
+    
+}
 
 

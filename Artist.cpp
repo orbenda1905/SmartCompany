@@ -35,3 +35,20 @@ void Artist::setFields(vector<string>& fields) {
 void Artist::setFields(vector<string>& fields) {
 	this->fields = fields;
 }
+
+void  Artist::Print(){
+   
+    PrintPerson();
+    cout<<getCompanyId()<<endl;
+    cout<<"Total Hours:"<<getTotalHours()<<endl;
+    cout<<"Experience:"<<getExperience()<<endl;
+    cout<<"Total project hours"<<getTotalProjHours()<<endl;
+    cout<<"Hours per day"<<getHoursPerDay()<<endl;
+    cout<<"Current project ID"<<getCurrentProjectId()<<endl;
+    cout<<"Total project work"<<getTotalprojwork()<<endl;
+    cout<<"The artist fieldes are:"<<endl;
+    for (int i=0; i<fields.size();i++){
+        cout << fields[i] << endl;
+    }
+    
+}

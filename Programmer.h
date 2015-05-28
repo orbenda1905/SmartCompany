@@ -9,7 +9,7 @@
 #define PROGRAMMER_H_
 
 
-
+#include "Employee.h"
 #include "Project.h"
 
 using namespace std;
@@ -27,6 +27,7 @@ public:
 	const vector<string>& getKnowedLangs() const;
 	void setKnowedLangs(vector<string>& langs);
 	void setFields(vector<string>& field);
+    void Print();
 };
 
 
