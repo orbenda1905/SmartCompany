@@ -7,6 +7,10 @@
 
 #include "Programmer.h"
 
+Programmer::Programmer() : Employee()
+{
+    
+}
 
 
 Programmer::Programmer(const string id, const string& Name, const long phNum, string compId, SmartPtr<Project>& currProj, int TProjH, int THrs, int exp, bool employ, int hrsPDay, vector<string>& langs, vector<string>& flds){
@@ -28,11 +32,11 @@ Programmer::~Programmer() {
 	// TODO Auto-generated destructor stub
 }
 
-void Programmer::setKnowedLangs(ProgLang& langs) {
+void Programmer::setKnowedLangs(vector<string>& langs) {
 	knowedLangs = langs;
 }
 
-void Programmer::setFields(FieldProg& field) {
+void Programmer::setFields(vector<string>& field) {
 	this->fields = fields;
 }
 

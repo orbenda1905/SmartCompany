@@ -49,7 +49,7 @@ const map<SmartPtr<Employee>, string>& Project::getCurWorkers() const {
 	return curWorkers;
 }
 
-void Project::setCurWorkers(const map<SmartPtr<Employee>, string>& curWorkers) {
+void Project::setCurWorkers(map<SmartPtr<Employee>, string>& curWorkers) {
 	this->curWorkers = curWorkers;
 }
 
@@ -117,3 +117,26 @@ void Project::setTotalHours(int totalHours) {
 void Project::checkFinish(){
     
 }
+
+void Project::speedUp(){
+    
+}
+
+bool Project::checkIfNeeding(SmartPtr<Employee> &emp){
+    Programmer *prog = dynamic_cast<Programmer*>(&emp);
+    if (prog == NULL)
+    {
+        
+    }
+}
+
+
+
+
+
+
+
+
+
+
+

@@ -42,7 +42,7 @@ public:
 	const SmartPtr<Client>& getClient() const;
 	void setClient(const SmartPtr<Client>& client);
 	const map<SmartPtr<Employee>, string>& getCurWorkers() const;
-	void setCurWorkers(const map<SmartPtr<Employee>, string>& curWorkers);
+	void setCurWorkers(map<SmartPtr<Employee>, string>& curWorkers);
 	const map<SmartPtr<Employee>, string>& getFinishedWorkers() const;
 	void setFinishedWorkers(const map<SmartPtr<Employee>, string>& finishedWorkers);
 	int getHoursLeft() const;
@@ -60,6 +60,9 @@ public:
 	void setTotalHours(int totalHours);
 	void speedUp();
 	void checkFinish();
+    bool addEmployee(SmartPtr<Employee>& emp);
+    bool checkExist(SmartPtr<Employee>& emp);
+    bool checkIfNeeding(SmartPtr<Employee>& emp);
 };
 
 

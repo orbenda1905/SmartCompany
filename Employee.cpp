@@ -7,10 +7,15 @@
 
 #include "Employee.h"
 
-Employee::Employee(const string id, const string& Name, const long phNum, string compId, SmartPtr<Project>& currProj, int TProjH, int THrs, int exp, bool employ, int hrsPDay) : Person(id, Name, phNum)
+Employee::Employee() : Person()
+{
+    
+}
+
+Employee::Employee(const string id, const string& Name, const long phNum, string compId, string *currProj, int TProjH, int THrs, int exp, bool employ, int hrsPDay) : Person(id, Name, phNum)
 {
 	companyId = compId;
-	currentProject = currProj;
+	currentProjectId = currProj;
 	totalProjHours = TProjH;
 	totalHours = THrs;
 	experience = exp;
@@ -23,8 +28,8 @@ string Employee::getCompanyId() const {
 	return companyId;
 }
 
-const SmartPtr<Project>& Employee::getCurrentProject() const {
-	return currentProject;
+const string& Employee::getCurrentProjectId() const {
+	return *currentProjectId;
 }
 
 int Employee::getExperience() const {

@@ -7,6 +7,11 @@
 
 #include "Artist.h"
 
+Artist::Artist() : Employee()
+{
+    
+}
+
 
 Artist::Artist(const string id, const string& Name, const long phNum, string compId, Project& currProj, int TProjH, int THrs, int exp, bool employ, int hrsPDay, vector<string>& flds){
 	Employee(id, Name, phNum, compId, currProj, TProjH, THrs, exp, employ, hrsPDay);

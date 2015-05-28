@@ -22,11 +22,16 @@ private:
 
 public:
 	Company(string name);
-	void addEmployee(SmartPtr<Employee>& worker);
+	void addEmployee(SmartPtr<Employee>& newWorker);
     void addProject(SmartPtr<Project>& newProject);
     void addProjCicle(string& projId, string& date);
     void addClient(SmartPtr<Client>& newClient);
+    bool checkIfProjectExist(string& projId);
+    bool checkIfClientExist(string& clientId);
+    bool CheckIfEmployeeExist(string& empId);
+    bool checkifCycleExist(string& projId);
     void speedUp();
+    void startArrange();
 	~Company();
     void ForceQuit(string ProjectName);
 
