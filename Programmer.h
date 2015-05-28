@@ -9,14 +9,9 @@
 #define PROGRAMMER_H_
 
 
-<<<<<<< HEAD
 
 #include "Employee.h"
 #include "Headers.h"
-=======
-#include "Employee.h"
-#include "Project.h"
->>>>>>> 7a7e5d0ffd02c47320b9e9fed3b21066d4fef9d9
 
 using namespace std;
 
