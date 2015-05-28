@@ -7,7 +7,12 @@
 
 #include "Project.h"
 
+<<<<<<< HEAD
 Project::Project(string name, string id, int ttlHrs, int hrsLft, SmartPtr<Manager>& mngr, int progCnt, int artCnt, vector<string>& pFld,vector<string>& aFld, map<string, SmartPtr<Employee>>& curList, map<string, SmartPtr<Employee>>& doneList, SmartPtr<Client>& client){
+=======
+Project::Project(string name, string id, int ttlHrs, int hrsLft,
+    SmartPtr<Manager>& mngr, int progCnt, int artCnt, vector<string>& pFld,vector<string>& aFld, map<SmartPtr<Employee>, string>& curList, map<SmartPtr<Employee>, string>& doneList, SmartPtr<Client>& client){
+>>>>>>> 7a7e5d0ffd02c47320b9e9fed3b21066d4fef9d9
 	projectName = name;
 	projId = id;
 	totalHours = ttlHrs;

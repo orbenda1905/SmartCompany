@@ -30,6 +30,7 @@ public:
 	const string getId() const;
 	const long getPhoneNumber() const;
 	void setPhoneNumber(const long phoneNumber) ;
+    void PrintPerson();
 };
 
 #endif /* PERSON_H_ */

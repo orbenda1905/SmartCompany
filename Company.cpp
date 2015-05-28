@@ -125,6 +125,8 @@ bool Company::checkifCycleExist(const string& projId){
     return true;
 }
 
-
+void Company::PrintCompany(){
+    
+}
 
 

@@ -41,6 +41,8 @@ public:
 	int getTotalProjHours() const;
 	void setTotalProjHours(int totalProjHours);
     void speedUp();
+    virtual void Print()=0;
+    int getTotalprojwork() const;
 
 	~Employee();
 };

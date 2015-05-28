@@ -34,7 +34,7 @@ public:
     void startArrange();
 	~Company();
     void ForceQuit(string ProjectName);
-
+    void PrintCompany();
 };
 
 
