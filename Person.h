@@ -22,6 +22,7 @@ protected:
 	long phoneNumber;
 	
 public:
+    Person();
 	Person(const string id, const string& Name, const long phNum);
 	virtual ~Person();
 	const string& getName() const;

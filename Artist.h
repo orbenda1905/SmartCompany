@@ -19,6 +19,7 @@ class Artist : public virtual Employee {
 protected:
 	vector<string> fields;
 public:
+    Artist();
 	Artist(const string id, const string& Name, const long phNum, string compId, Project& currProj, int TProjH, int THrs, int exp, bool employ, int hrsPDay, vector<string>& flds);
 	virtual ~Artist();
 	vector<string>& getFields() const;

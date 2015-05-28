@@ -20,5 +20,5 @@ ProjectCycle::~ProjectCycle() {
 
 
 void ProjectCycle::speedUp(){
-    
+    //for loop on the project map and call eah project's "speedUp() method
 }

@@ -7,10 +7,8 @@
 
 #include "Manager.h"
 
-namespace std {
-
-Manager::Manager(const string id, const string& Name, const long phNum, string compId, SmartPtr<Project>& currProj, int TProjH, int THrs, int exp, bool employ, int hrsPDay, vector<string>& knwdP, vector<string>& fieldP, vector<string>& fieldA) {
-	Employee(id, Name, phNum, compId, currProj, TProjH, THrs, exp, employ, hrsPDay);
+Manager::Manager(const string id, const string& Name, const long phNum, string compId, SmartPtr<Project>& currProj, int TProjH, int THrs, int exp, bool employ, int hrsPDay, vector<string>& knwdP, vector<string>& fieldP, vector<string>& fieldA) : Employee(id, Name, phNum, compId, currProj, TProjH, THrs, exp, employ, hrsPDay)
+    {
 	Programmer::setKnowedLangs(knwdP);
 	Programmer::setFields(fieldP);
 	Artist::setFields(fieldA);
@@ -21,4 +19,4 @@ Manager::~Manager() {
 	// TODO Auto-generated destructor stub
 }
 
-} /* namespace std */
+

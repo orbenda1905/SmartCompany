@@ -18,16 +18,18 @@ class Employee: public Person {
 private:
 	string companyId;
 protected:
-	SmartPtr<Project> currentProject;
-	int totalProjHours;
+	string *currentProjectId = NULL;
+	int totalProjHours; //how many hours he needs to do for this project
+    int totalProjWork; //how many hours he worked so far at this project
 	int totalHours;
 	int experience;
 	bool isEmployed;
 	int hoursPerDay;
 public:
-	Employee(const string id, const string& Name, const long phNum, string compId, SmartPtr<Project>& currProj, int TProjH, int THrs, int exp, bool employ, int hrsPDay);
+    Employee();
+	Employee(const string id, const string& Name, const long phNum, string compId, string *currProj, int TProjH, int THrs, int exp, bool employ, int hrsPDay);
 	string getCompanyId() const;
-	const SmartPtr<Project>& getCurrentProject() const;
+	const string& getCurrentProjectId() const;
 	int getExperience() const;
 	void setExperience(int experience);
 	int getHoursPerDay() const;

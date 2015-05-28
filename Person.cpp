@@ -7,6 +7,11 @@
 
 #include "Person.h"
 
+Person::Person()
+{
+    
+}
+
 Person::Person(const string id, const string& Name, const long phNum) {
 	this->id = id;
 	name = Name;
