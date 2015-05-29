@@ -9,7 +9,7 @@
 
 
 
-ProjectCycle::ProjectCycle(SmartPtr<Project>& project, string& date) : project(project), date(date) {
+ProjectCycle::ProjectCycle(SmartPtr<Project> project, string& date) : project(project), date(date) {
     
 }
 

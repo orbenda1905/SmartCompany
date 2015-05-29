@@ -19,8 +19,8 @@ private:
 	string companyId;
 protected:
 	string *currentProjectId = NULL;
-	int totalProjHours; //how many hours he needs to do for this project
-    int totalProjWork; //how many hours he worked so far at this project
+	int totalProjHours; //how many worked so far for this project
+    int neededProjectHours = 0; //how many hours he needs to do for this project
 	int totalHours;
 	int experience;
 	bool isEmployed;
@@ -42,7 +42,7 @@ public:
 	void setTotalProjHours(int totalProjHours);
     void speedUp();
     virtual void Print()=0;
-    int getTotalprojwork() const;
+    int getNeededProjectHours() const;
 
 	~Employee();
 };
