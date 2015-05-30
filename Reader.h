@@ -17,12 +17,12 @@ using namespace std;
 
 class Reader {
 private:
-   char* get_line(ifstream &f);
+   
 public:
 	Reader(const char *file_name);
     virtual ~Reader();
-    Reader(const char* file_name);
-    vector<string> split(const string s, char c);
+    
+    
     
 
     

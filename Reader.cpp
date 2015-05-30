@@ -32,11 +32,6 @@ Reader::Reader(const char* file_name){
 
 
 
-Reader::Reader() {
-	
-
-}
-
 Reader::~Reader() {
 	
 }
