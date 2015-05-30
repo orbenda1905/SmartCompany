@@ -15,12 +15,7 @@ Reader::Reader(const char* file_name){
     ifstream f(file_name);
     char* line = get_line(f);
     SmartPtr<Company> company = new Company(line);
-    string company_name = strtok(line, ";");
-    Company(Company(company_name));
     
-    line = get_line(f);
-    SmartPtr<Client> client = new Client();
-    string client_name = strtok(NULL, ";");
     
     
     
