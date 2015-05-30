@@ -68,15 +68,29 @@ void Employee::setTotalHours(int totalHours) {
 	this->totalHours = totalHours;
 }
 
-int Employee::getTotalProjHours() const {
-	return totalProjHours;
+int Employee::getSoFarProjHours() const {
+	return soFarProjHours;
 }
 
-void Employee::setTotalProjHours(int totalProjHours) {
-	this->totalProjHours = totalProjHours;
+void Employee::setSoFarProjHours(int soFarProjHours) {
+	this->soFarProjHours = soFarProjHours;
 }
 
 int Employee::getNeededProjectHours() const{
     return neededProjectHours;
 }
 
+const string& Employee::getId() const
+{
+    return Person::getId();
+}
+
+void Employee::setNeededProjectHours(int num)
+{
+    neededProjectHours = num;
+}
+
+void Employee::eraseProjId()
+{
+    currentProjectId = "";
+}

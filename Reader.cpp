@@ -42,14 +42,12 @@ char* Reader::get_line(ifstream &f) {
     return temp;
 }
 
-Reader::Reader() {
+Reader::Reader(){
+    
+}
 
-
-
-void Tokenize(const string& str,
-              vector<string>& tokens,
-              const string& delimiters = " ")
-{
+  
+void Reader::Tokenize(const string& str,vector<string>& tokens,const string& delimiters){
     // Skip delimiters at beginning.
     string::size_type lastPos = str.find_first_not_of(delimiters, 0);
     // Find first "non-delimiter".

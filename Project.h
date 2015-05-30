@@ -12,12 +12,13 @@
 #include "Employee.h"
 #include "Client.h"
 #include "SmartPtr.h"
+#include "WriteToFile.h"
 
 
 
 
 
-class Project {
+class Project : public WriteToFile {
 private:
 
 	string projId;
@@ -28,15 +29,17 @@ private:
 	int artistsNumber;
     bool fullyRecruit = false;
 	vector<string> progWorkField;
+    vector<string> progLangs;
 	vector<string> artWorkField;
 	SmartPtr<Employee> manager;
-	map<string, SmartPtr<Employee>> curWorkers;
+    map<string, SmartPtr<Employee>> artists;
+    map<string, SmartPtr<Employee>> programmers;
 	map<string, SmartPtr<Employee>> finishedWorkers;
 	SmartPtr<Client> client;
     
 
 public:
-	Project(string name, string id, int ttlHrs, int hrsLft, SmartPtr<Manager>& mngr, int progCnt, int artCnt, vector<string>& pFld,vector<string>& aFld, map<string, SmartPtr<Employee>>& curList, map<string, SmartPtr<Employee>>& doneList, SmartPtr<Client>& client);
+	Project(string name, string id, int ttlHrs, int hrsLft, SmartPtr<Employee> mngr, int progCnt, int artCnt, vector<string>& pFld,vector<string>& aFld, map<string, SmartPtr<Employee>>& curList, map<string, SmartPtr<Employee>>& doneList, SmartPtr<Client>& client);
 	int getArtistsNumber() const;
 	void setArtistsNumber(int artistsNumber);
 	const vector<string>& getArtWorkField() const;
@@ -62,10 +65,15 @@ public:
 	void setTotalHours(int totalHours);
 	void speedUp();
 	void checkFinish();
-    bool addEmployee(SmartPtr<Employee>& emp);
-    bool checkExist(SmartPtr<Employee>& emp);
-    bool checkIfNeeding(SmartPtr<Employee>& emp);
-    bool checkEmployee(SmartPtr<Employee>& emp);
+    bool checkExistProg(SmartPtr<Employee>& emp);
+    bool checkExistArtist(SmartPtr<Employee>& emp);
+    bool checkIfNeedingProg(SmartPtr<Employee>& emp);
+    bool checkIfNeedingArt(SmartPtr<Employee>& emp);
+    bool addProgrammer(SmartPtr<Employee>& emp);
+    bool addArtist(SmartPtr<Employee>& emp);
+    void beginTheProject();
+    void finishProject();
+    void dismissEmployee(SmartPtr<Employee>& emp);
 
 };
 

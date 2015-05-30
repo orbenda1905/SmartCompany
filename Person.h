@@ -13,7 +13,7 @@ using namespace std;
 
 
 
-class Person : public WriteTofile {
+class Person : public WriteToFile {
 private:
 	string id;
 protected:
@@ -27,7 +27,7 @@ public:
 	virtual ~Person();
 	const string& getName() const;
 	void setName(const string& Name);
-	const string getId() const;
+	const string& getId() const;
 	const long getPhoneNumber() const;
 	void setPhoneNumber(const long phoneNumber) ;
     void PrintPerson();

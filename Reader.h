@@ -19,16 +19,10 @@ private:
 public:
 	Reader(const char *file_name);
     virtual ~Reader();
-<<<<<<< HEAD
     Reader(const char* file_name);
     vector<string> split(const string s, char c);
-    void Tokenize(const string& str,
-                  vector<string>& tokens,
-                  const string& delimiters = " ");
-=======
-    
-    
->>>>>>> 22389c8d3841403e0fce67ef441bfbfae82c7e8f
+    void Tokenize(const string& str,vector<string>& tokens,const string& delimiters);
+
     
 
     
