@@ -24,14 +24,16 @@ private:
 	int totalHours;
 	int hoursLeft;
 	string projectName;
-	int programmersNumber;
+    int programmersNumber;
 	int artistsNumber;
+    bool fullyRecruit = false;
 	vector<string> progWorkField;
 	vector<string> artWorkField;
-	SmartPtr<Manager> manager;
+	SmartPtr<Employee> manager;
 	map<string, SmartPtr<Employee>> curWorkers;
 	map<string, SmartPtr<Employee>> finishedWorkers;
 	SmartPtr<Client> client;
+    
 
 public:
 	Project(string name, string id, int ttlHrs, int hrsLft, SmartPtr<Manager>& mngr, int progCnt, int artCnt, vector<string>& pFld,vector<string>& aFld, map<string, SmartPtr<Employee>>& curList, map<string, SmartPtr<Employee>>& doneList, SmartPtr<Client>& client);
@@ -47,8 +49,8 @@ public:
 	void setFinishedWorkers(const map<string, SmartPtr<Employee>>& finishedWorkers);
 	int getHoursLeft() const;
 	void setHoursLeft(int hoursLeft);
-	const SmartPtr<Manager>& getManager() const;
-	void setManager(const SmartPtr<Manager>& manager);
+    SmartPtr<Employee>& getManager();
+	void setManager(SmartPtr<Employee> manager);
 	int getProgrammersNumber() const;
 	void setProgrammersNumber(int programmersNumber);
 	const vector<string>& getProgWorkField() const;
@@ -63,6 +65,8 @@ public:
     bool addEmployee(SmartPtr<Employee>& emp);
     bool checkExist(SmartPtr<Employee>& emp);
     bool checkIfNeeding(SmartPtr<Employee>& emp);
+    bool checkEmployee(SmartPtr<Employee>& emp);
+
 };
 
 

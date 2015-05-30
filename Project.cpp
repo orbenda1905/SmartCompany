@@ -72,11 +72,11 @@ void Project::setHoursLeft(int hoursLeft) {
 	this->hoursLeft = hoursLeft;
 }
 
-const SmartPtr<Manager>& Project::getManager() const {
+SmartPtr<Employee>& Project::getManager() {
 	return manager;
 }
 
-void Project::setManager(const SmartPtr<Manager>& manager) {
+void Project::setManager(SmartPtr<Employee> manager) {
 	this->manager = manager;
 }
 
@@ -128,9 +128,32 @@ bool Project::checkIfNeeding(SmartPtr<Employee> &emp){
     Programmer *prog = dynamic_cast<Programmer*>(&emp);
     if (prog == NULL)
     {
+        vector<string> vec = ((SmartPtr<Artist>&)emp)->getFields();
+        for (vector<string>::iterator it1 = artWorkField.begin(); it1 != artWorkField.end(); it1++)
+        {
+            for (vector<string>::iterator it2 = vec.begin(); it2 != vec.end(); ++it2)
+            {
+                if (it2 == it1) return true;
+            }
+        }
+        return false;
+    }
+    else
+    {
         
     }
 }
+
+    return false;
+}
+
+bool Project::checkEmployee(SmartPtr<Employee> &emp){
+    if (checkExist(emp)){
+            return false;
+}
+
+
+
 
 
 

@@ -22,10 +22,10 @@ private:
 
 public:
 	Company(string name);
-	void addEmployee(SmartPtr<Employee> newWorker);
-    void addProject(SmartPtr<Project> newProject);
+	void addEmployee(SmartPtr<Employee>& newWorker);
+    void addProject(SmartPtr<Project>& newProject);
     void addProjCycle(string& projId, string& date);
-    void addClient(SmartPtr<Client> newClient);
+    void addClient(SmartPtr<Client>& newClient);
     bool checkIfProjectExist(const string& projId);
     bool checkIfClientExist(const string& clientId);
     bool checkIfEmployeeExist(const string& empId);
@@ -35,7 +35,7 @@ public:
 	~Company();
     void ForceQuit(string ProjectName);
     void PrintCompany();
-    void startCycle(SmartPtr<ProjectCycle> cylce, string& projId);
+    void startCycle(SmartPtr<ProjectCycle>& cylce, string& projId);
 };
 
 

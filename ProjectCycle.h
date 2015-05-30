@@ -8,19 +8,19 @@
 #ifndef PROJECTCYCLE_H_
 #define PROJECTCYCLE_H_
 #include "Headers.h"
-#include "Project.h"
 #include "Employee.h"
+#include "WriteToFile.h"
 
-class ProjectCycle {
+class ProjectCycle : public WriteToFile {
 private:
 	SmartPtr<Project> project;
-	//date
 	int projEmployees;
     string& date;
 	map<string, SmartPtr<Employee>> currentProjEmployees;
 
 public:
 	ProjectCycle(SmartPtr<Project> project, string& data);
+    void addEmployee(SmartPtr<Employee>& emp);
 	virtual ~ProjectCycle();
     void speedUp();
 };

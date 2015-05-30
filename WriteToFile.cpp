@@ -8,18 +8,16 @@
 //
 
 #include "WriteToFile.h"
-#include "Headers.h"
 
 
 
-WriteTofile::WriteTofile(){
-    
-    LogFile.open("Logger.txt", ios_base::app);
-    if (!LogFile.is_open())
-        cout<<"file couln'topen"<<endl;
+
+WriteToFile::WriteToFile(){
+
+
 };
 
-WriteTofile::~WriteTofile(){
+WriteToFile::~WriteToFile(){
     
     LogFile.close();
 

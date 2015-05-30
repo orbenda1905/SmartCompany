@@ -9,13 +9,32 @@
 
 
 
-ProjectCycle::ProjectCycle(SmartPtr<Project> project, string& date) : project(project), date(date) {
+ProjectCycle::ProjectCycle(SmartPtr<Project> project, string& date) : WriteToFile(), project(project), date(date) {
     
 }
 
 
 ProjectCycle::~ProjectCycle() {
 	// TODO Auto-generated destructor stub
+}
+
+void ProjectCycle::addEmployee(SmartPtr<Employee>& emp){
+    Manager *temp = dynamic_cast<Manager*>(&emp);
+    if (temp != NULL)
+    {
+        project->addManager(emp);
+        return;
+    }
+    if (project->checkEmployee(emp))
+    {
+        currentProjEmployees.emplace(emp->getId(), emp);
+    }
+    else
+    {
+        LogFile << "the employee, id: " << emp->getId() << "is not suitable for this peoject" << endl;
+        emp->setProjectId(*(new string(NULL)));
+    }
+    
 }
 
 

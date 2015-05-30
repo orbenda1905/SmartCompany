@@ -13,7 +13,7 @@ Company::Company(string name) {
 }
 
 
-void Company::addEmployee(SmartPtr<Employee> newWorker)
+void Company::addEmployee(SmartPtr<Employee>& newWorker)
 {
     if (checkIfEmployeeExist(newWorker->getId()))
     {
@@ -51,7 +51,7 @@ void Company::addProjCycle(string& projId, string& date){
     return;
 }
 
-void Company::addProject(SmartPtr<Project> newProject)
+void Company::addProject(SmartPtr<Project>& newProject)
 {
     if (checkIfProjectExist(newProject->getProjId()))
     {
@@ -66,7 +66,7 @@ void Company::addProject(SmartPtr<Project> newProject)
     return;
 }
 
-void Company::addClient(SmartPtr<Client> newClient)
+void Company::addClient(SmartPtr<Client>& newClient)
 {
     if (checkIfClientExist(newClient->getId()))
     {
@@ -131,13 +131,13 @@ void Company::PrintCompany(){
     
 }
 
-void Company::startCycle(SmartPtr<ProjectCycle> cycle, string& projId)
+void Company::startCycle(SmartPtr<ProjectCycle>& cycle, string& projId)
 {
     for (map<string, SmartPtr<Employee>>::iterator it = employees.begin(); it != employees.end(); ++it)
     {
         if (it->second->getCurrentProjectId() == projId)
         {
-            
+            cycle->addEmployee(employees.at(it->second->getId()));
         }
     }
 }
