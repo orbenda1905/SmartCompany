@@ -6,40 +6,49 @@
  */
 
 #include "Reader.h"
+#include "DataSplit.cpp"
 #include <iostream>
-#include <string.h>
+#include <string>
 
 using namespace std;
 
-Reader::Reader(const char* file_name){
-    ifstream f(file_name);
-    char* line = get_line(f);
-    SmartPtr<Company> company = new Company(line);
-    string company_name = strtok(line, ";");
-    Company(Company(company_name));
-    
-    line = get_line(f);
-    SmartPtr<Client> client = new Client();
-    string client_name = strtok(NULL, ";");
-    
-    
-    
-    
-    
-    
+Reader::Reader(const char* file_name)
+{
+    fileName = new char[strlen(file_name)+1];
+    strcpy(fileName, file_name);
 }
 
-
-char* Reader::get_line(ifstream &f) {
-    char *temp = new char[N];
-    f.getline(temp, N);
-    
-    if (temp[0] == '#') {
-        delete[] temp;
-        return get_line(f);
+void Reader::ReadData()
+{
+    SmartPtr<Company> company = new Company();
+    string str;
+    ifstream myFile (fileName);
+    if (myFile.is_open())
+    {
+        while (!myFile.eof())
+        {
+            getline(myFile,str);
+            if (str == "#INPUT-COMP\r")
+            {
+                getline(myFile,str);
+                if (str[0] != '#' && str != "\r")
+                {
+                    vector<string> tokens = ds.Tokenize(str, tokens, ";");
+                    cout << tokens[0] << endl;
+                    
+                }
+            }else if(str == "#INPUT-CLIENT\r")
+            {
+                getline(myFile,str);
+                while (str[0] != '#' && str != "\r")
+                {
+                    vector<string> tokens = ds.Tokenize(str, tokens, ";");
+                    SmartPtr<Client> client = new Client();
+                    Client->
+                }
+            }
+        }
     }
-    
-    return temp;
 }
 
 Reader::Reader(){
@@ -70,3 +79,10 @@ Reader::~Reader() {
 	
 }
 
+
+/*
+ ifstream f(file_name);
+ char* line = get_line(f);
+ SmartPtr<Company> company = new Company(line);
+ 
+ */
