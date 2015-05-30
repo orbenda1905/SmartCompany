@@ -30,7 +30,6 @@ Reader::Reader(const char* file_name){
 }
 
 
-<<<<<<< HEAD
 char* Reader::get_line(ifstream &f) {
     char *temp = new char[N];
     f.getline(temp, N);
@@ -44,8 +43,7 @@ char* Reader::get_line(ifstream &f) {
 }
 
 Reader::Reader() {
-=======
->>>>>>> 22389c8d3841403e0fce67ef441bfbfae82c7e8f
+
 
 
 void Tokenize(const string& str,
