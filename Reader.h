@@ -8,41 +8,27 @@
 #ifndef READER_H_
 #define READER_H_
 #include <iostream>
+#include <vector>
+#include <sstream>
+#include <string>
 #include <fstream>
-#include "Client.h"
+#include "DataSplit.h"
+#include "SmartPtr.h"
 #include "Company.h"
+
+using namespace std;
 
 
 class Reader {
 private:
-   
+    char* fileName;
 public:
 	Reader(const char *file_name);
     virtual ~Reader();
-<<<<<<< HEAD
-    Reader(const char* file_name);
-    vector<string> split(const string s, char c);
-    void Tokenize(const string& str,
-                  vector<string>& tokens,
-                  const string& delimiters = " ");
-=======
-    
-    
->>>>>>> 22389c8d3841403e0fce67ef441bfbfae82c7e8f
-    
-
+    void ReadData();
+    DataSplit ds;
     
 };
 
 
-//int main()
-//{
-//    vector<string> vec;
-//    string str = {"[donald duck;302945241;4506;cpp,bend]"};
-//    Tokenize(str, vec, "[];");
-//    for (vector<string>::iterator it = vec.begin(); it != vec.end(); ++it)
-//    {
-//        cout << *it << endl;
-//    }
-
-#endif /* READER_H_ */
+#endif /* defined(__SmartPointer__DataSplit__) */
