@@ -12,18 +12,18 @@
 #include <stdio.h>
 #include <fstream>
 using namespace std;
-class WriteTofile{
-
+class WriteToFile{
 protected:
-    fstream LogFile;
+
+    static ofstream& LogFile;
+    
 public:
-    
-    WriteTofile();
-    ~WriteTofile();
-    
-    
-    
-    
+    WriteToFile();
+    ~WriteToFile();
     
 };
+
+static ofstream output("Logger.txt", ios_base::app);
+
+ofstream& WriteToFile::LogFile = output;
 #endif /* defined(__SmartPtr__WriteToFile__) */

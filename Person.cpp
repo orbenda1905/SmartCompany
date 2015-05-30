@@ -53,7 +53,7 @@ void Person::PrintPerson()
     LogFile<<"ID:"<<getId()<<endl;
     LogFile<<"Name:"<<getName()<<endl;
     LogFile<<"Phone number:"<<getPhoneNumber()<<endl;
-    ~WriteTofile();
+
 }
 
 

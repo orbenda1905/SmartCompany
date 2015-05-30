@@ -12,7 +12,7 @@ Employee::Employee() : Person()
     
 }
 
-Employee::Employee(const string id, const string& Name, const long phNum, string compId, string *currProj, int TProjH, int THrs, int exp, bool employ, int hrsPDay) : Person(id, Name, phNum)
+Employee::Employee(const string id, const string& Name, const long phNum, string compId, string &currProj, int TProjH, int THrs, int exp, bool employ, int hrsPDay) : Person(id, Name, phNum)
 {
 	companyId = compId;
 	currentProjectId = currProj;
@@ -29,7 +29,11 @@ string Employee::getCompanyId() const {
 }
 
 const string& Employee::getCurrentProjectId() const {
-	return *currentProjectId;
+	return currentProjectId;
+}
+
+void Employee::setProjectId(string& projId){
+    currentProjectId = projId;
 }
 
 int Employee::getExperience() const {

@@ -18,7 +18,7 @@ class Employee: public Person {
 private:
 	string companyId;
 protected:
-	string *currentProjectId = NULL;
+	string currentProjectId;
 	int totalProjHours; //how many worked so far for this project
     int neededProjectHours = 0; //how many hours he needs to do for this project
 	int totalHours;
@@ -27,9 +27,10 @@ protected:
 	int hoursPerDay;
 public:
     Employee();
-	Employee(const string id, const string& Name, const long phNum, string compId, string *currProj, int TProjH, int THrs, int exp, bool employ, int hrsPDay);
+	Employee(const string id, const string& Name, const long phNum, string compId, string& currProj, int TProjH, int THrs, int exp, bool employ, int hrsPDay);
 	string getCompanyId() const;
 	const string& getCurrentProjectId() const;
+    void setProjectId(string& projId);
 	int getExperience() const;
 	void setExperience(int experience);
 	int getHoursPerDay() const;
