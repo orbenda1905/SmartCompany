@@ -13,8 +13,6 @@
 #include "Company.h"
 
 
-using namespace std;
-
 class Reader {
 private:
    
