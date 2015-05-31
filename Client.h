@@ -15,11 +15,13 @@ class Client:public Person {
 private:
 	int totalProjcets;
 	string currentProjectId;
+    bool projFinished = false;
 public:
-	Client(const string id, const string& Name, const long phNum, int tProjects, string curProjId);
+	Client(const string id, const string& Name, const string phNum, int tProjects, string curProjId);
 	virtual ~Client();
     void PrintClient();
-
+    bool getProjFinished();
+    void setProjFinished(bool status);
 
 };
 

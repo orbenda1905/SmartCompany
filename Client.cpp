@@ -7,7 +7,7 @@
 
 #include "Client.h"
 
-Client::Client(const string id, const string& Name, const long phNum,
+Client::Client(const string id, const string& Name, const string phNum,
                int tProjects, string curProjId) : Person(id, Name, phNum)
 {
 	
@@ -27,5 +27,14 @@ void Client::PrintClient(){
     
     LogFile<<"client total projects:"<<totalProjcets<<endl;
     LogFile<<"The client current project"<<currentProjectId<<endl;
-    
+}
+
+bool Client::getProjFinished()
+{
+    return projFinished;
+}
+
+void Client::setProjFinished(bool status)
+{
+    projFinished = true;
 }

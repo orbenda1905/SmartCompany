@@ -47,6 +47,7 @@ public:
     void setNeededProjectHours(int num);
     const string& getId() const;
     void eraseProjId();
+    bool getIsEmployed();
 
 	~Employee();
 };

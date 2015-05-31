@@ -66,5 +66,22 @@ void ProjectCycle::start()
 
 
 void ProjectCycle::speedUp(){
-    //for loop on the project map and call eah project's "speedUp() method
+    project->speedUp();
+    if (project->getNeedToRemove())
+    {
+        delete project;
+        currentProjEmployees.clear();
+    }
+    
+    
+
+}
+
+void ProjectCycle::checkFinishedEmployee()
+{
+    for (map<string, SmartPtr<Employee>>::iterator it = currentProjEmployees.begin(); it != currentProjEmployees.end(); it++)
+    {
+        if (it->second->getIsEmployed())
+            currentProjEmployees.erase(it->second->getId());
+    }
 }

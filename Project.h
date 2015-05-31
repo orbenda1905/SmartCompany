@@ -28,6 +28,7 @@ private:
     int programmersNumber;
 	int artistsNumber;
     bool fullyRecruit = false;
+    bool needToRemove = false;
 	vector<string> progWorkField;
     vector<string> progLangs;
 	vector<string> artWorkField;
@@ -40,16 +41,13 @@ private:
 
 public:
 	Project(string name, string id, int ttlHrs, int hrsLft, SmartPtr<Employee> mngr, int progCnt, int artCnt, vector<string>& pFld,vector<string>& aFld, map<string, SmartPtr<Employee>>& curList, map<string, SmartPtr<Employee>>& doneList, SmartPtr<Client>& client);
+    ~Project();
 	int getArtistsNumber() const;
 	void setArtistsNumber(int artistsNumber);
 	const vector<string>& getArtWorkField() const;
 	void setArtWorkField(vector<string>& artWorkField);
 	const SmartPtr<Client>& getClient() const;
 	void setClient(const SmartPtr<Client>& client);
-	const map<string, SmartPtr<Employee>>& getCurWorkers() const;
-	void setCurWorkers(map<string, SmartPtr<Employee>>& curWorkers);
-	const map<string, SmartPtr<Employee>>& getFinishedWorkers() const;
-	void setFinishedWorkers(const map<string, SmartPtr<Employee>>& finishedWorkers);
 	int getHoursLeft() const;
 	void setHoursLeft(int hoursLeft);
     SmartPtr<Employee>& getManager();
@@ -74,6 +72,7 @@ public:
     void beginTheProject();
     void finishProject();
     void dismissEmployee(SmartPtr<Employee>& emp);
+    bool getNeedToRemove();
 
 };
 

@@ -47,23 +47,6 @@ void Project::setClient(const SmartPtr<Client>& client) {
 	this->client = client;
 }
 
-const map<string, SmartPtr<Employee>>& Project::getCurWorkers() const {
-	return curWorkers;
-}
-
-void Project::setCurWorkers(map<string, SmartPtr<Employee>>& curWorkers) {
-	this->curWorkers = curWorkers;
-}
-
-const map<string, SmartPtr<Employee>>& Project::getFinishedWorkers() const {
-	return finishedWorkers;
-}
-
-void Project::setFinishedWorkers(
-		const map<string, SmartPtr<Employee>>& finishedWorkers) {
-	this->finishedWorkers = finishedWorkers;
-}
-
 int Project::getHoursLeft() const {
 	return hoursLeft;
 }
@@ -116,13 +99,7 @@ void Project::setTotalHours(int totalHours) {
 	this->totalHours = totalHours;
 }
 
-void Project::checkFinish(){
-    if (hoursLeft <= 0)
-    {
-        finishProject();
-        return;
-    }
-}
+
 
 void Project::speedUp(){
     for (map<string, SmartPtr<Employee>>::iterator it = programmers.begin(); it != programmers.end(); it++)
@@ -143,6 +120,11 @@ void Project::speedUp(){
             it->second->setSoFarProjHours(totalProj);
             it->second->setTotalHours(totalHrs + totalProj - hrs);
         }
+    }
+    if (hoursLeft <= 0)//project has finished its hours
+    {
+        needToRemove = true;
+        return;
     }
     checkFinish();
 }
@@ -193,11 +175,11 @@ bool Project::addArtist(SmartPtr<Employee> &emp)
             cout << temp;
             return true;
         }
-        temp = "artist " + emp->getId() + " isn't needed for this project, this project is already fully occupied\n";
-        LogFile << temp;
-        cout << temp;
-        return false;
     }
+    temp = "artist " + emp->getId() + " isn't needed for this project, this project is already fully occupied\n";
+    LogFile << temp;
+    cout << temp;
+    return false;
 }
 
 bool Project::checkExistProg(SmartPtr<Employee> &emp)
@@ -268,16 +250,6 @@ void Project::beginTheProject()
     hoursLeft = totalHours;
 }
 
-void Project::finishProject()
-{
-    for (map<string, SmartPtr<Employee>>::iterator it = programmers.begin(); it != programmers.end(); it++)
-    {
-        dismissEmployee(it->second);
-        
-    }
-    programmers.clear();
-}
-
 void Project::dismissEmployee(SmartPtr<Employee> &emp)
 {
     emp->setIsEmployed(false);
@@ -286,6 +258,50 @@ void Project::dismissEmployee(SmartPtr<Employee> &emp)
     emp->setSoFarProjHours(0);
 }
 
+bool Project::getNeedToRemove()
+{
+    return needToRemove;
+}
 
+Project::~Project()
+{
+    for (map<string, SmartPtr<Employee>>::iterator it = programmers.begin(); it != programmers.end(); it++)
+    {
+        dismissEmployee(it->second);
+        
+    }
+    for (map<string, SmartPtr<Employee>>::iterator it = artists.begin(); it != artists.end(); it++)
+    {
+        dismissEmployee(it->second);
+    }
+    programmers.clear();
+    artists.clear();
+    progWorkField.clear();
+    artWorkField.clear();
+    progLangs.clear();
+    finishedWorkers.clear();
+    client->setProjFinished(true);
+    delete client;
+}
+
+void Project::checkFinish()
+{
+    for (map<string, SmartPtr<Employee>>::iterator it = programmers.begin(); it != programmers.end(); it++)
+    {
+        if (it->second->getSoFarProjHours() == it->second->getNeededProjectHours())
+        {
+            finishedWorkers.emplace(it->second->getId(), it->second);
+            programmers.erase(it->second->getId());
+        }
+    }
+    for (map<string, SmartPtr<Employee>>::iterator it = artists.begin(); it != artists.end(); it++)
+    {
+        if (it->second->getSoFarProjHours() == it->second->getNeededProjectHours())
+        {
+            finishedWorkers.emplace(it->second->getId(), it->second);
+            programmers.erase(it->second->getId());
+        }
+    }
+}
 
 

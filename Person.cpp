@@ -12,7 +12,7 @@ Person::Person()
     
 }
 
-Person::Person(const string id, const string& Name, const long phNum) {
+Person::Person(const string id, const string& Name, const string phNum) {
 	this->id = id;
 	name = Name;
 	phoneNumber = phNum;
@@ -26,11 +26,11 @@ void Person::setName(const string& Name) {
 	this->name = Name;
 }
 
-const string Person::getId() const {
+const string& Person::getId() const {
 	return id;
 }
 
-const long Person::getPhoneNumber() const {
+const string Person::getPhoneNumber() const {
 	return phoneNumber;
 }
 

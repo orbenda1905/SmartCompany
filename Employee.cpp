@@ -94,3 +94,8 @@ void Employee::eraseProjId()
 {
     currentProjectId = "";
 }
+
+bool Employee::getIsEmployed()
+{
+    return isEmployed;
+}
