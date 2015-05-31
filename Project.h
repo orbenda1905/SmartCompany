@@ -36,7 +36,7 @@ private:
     
 
 public:
-	Project(string name, string id, int ttlHrs, int hrsLft, SmartPtr<Manager>& mngr, int progCnt, int artCnt, vector<string>& pFld,vector<string>& aFld, map<string, SmartPtr<Employee>>& curList, map<string, SmartPtr<Employee>>& doneList, SmartPtr<Client>& client);
+	Project(string name, string id, int ttlHrs, int hrsLft, int progCnt, int artCnt, vector<string>& pFld,vector<string>& aFld);
 	int getArtistsNumber() const;
 	void setArtistsNumber(int artistsNumber);
 	const vector<string>& getArtWorkField() const;

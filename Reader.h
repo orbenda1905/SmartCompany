@@ -21,14 +21,26 @@ using namespace std;
 
 class Reader {
 private:
-    char* fileName;
+    ifstream myFile;
+    SmartPtr<Company> company;
+    string str;
+    vector<string> tokens;
+    DataSplit ds;
 public:
 	Reader(const char *file_name);
     virtual ~Reader();
     void ReadData();
-    DataSplit ds;
-    
+    void MakeClient();
+    void MakeCompany();
+    void MakeProgrammer();
+    void MakeManager();
+    void MakeArtist();
+    void MakeProject();
+    void MakeProjectCycle();
+    void MakeEmployee();
+    SmartPtr<Company>& getCompany();
 };
+
 
 
 #endif /* defined(__SmartPointer__DataSplit__) */

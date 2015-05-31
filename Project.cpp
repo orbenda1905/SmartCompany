@@ -8,13 +8,12 @@
 #include "Project.h"
 
 
-Project::Project(string name, string id, int ttlHrs, int hrsLft, SmartPtr<Manager>& mngr, int progCnt, int artCnt, vector<string>& pFld,vector<string>& aFld, map<string, SmartPtr<Employee>>& curList, map<string, SmartPtr<Employee>>& doneList, SmartPtr<Client>& client)
+Project::Project(string name, string id, int ttlHrs, int hrsLft, int progCnt, int artCnt, vector<string>& pFld,vector<string>& aFld)
 {
 	projectName = name;
 	projId = id;
 	totalHours = ttlHrs;
 	hoursLeft = hrsLft;
-	manager = mngr;
 	programmersNumber = progCnt;
 	artistsNumber = artCnt;
 	progWorkField = pFld;

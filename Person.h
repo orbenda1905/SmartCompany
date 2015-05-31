@@ -13,23 +13,23 @@ using namespace std;
 
 
 
-class Person : public WriteTofile {
+class Person : public WriteToFile {
 private:
 	string id;
 protected:
 	string name;
 
-	long phoneNumber;
+	string phoneNumber;
 	
 public:
     Person();
-	Person(const string id, const string& Name, const long phNum);
+	Person(const string id, const string& Name, const string phNum);
 	virtual ~Person();
 	const string& getName() const;
 	void setName(const string& Name);
 	const string getId() const;
-	const long getPhoneNumber() const;
-	void setPhoneNumber(const long phoneNumber) ;
+	const string getPhoneNumber() const;
+	void setPhoneNumber(const string phoneNumber) ;
     void PrintPerson();
 };
 

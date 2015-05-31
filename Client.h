@@ -16,7 +16,7 @@ private:
 	int totalProjcets;
 	string currentProjectId;
 public:
-	Client(const string id, const string& Name, const long phNum, int tProjects, string curProjId);
+    Client(const string& Name, const string id, const string phNum, string curProjId,int tProjects);
 	virtual ~Client();
     void PrintClient();
 
