@@ -12,11 +12,10 @@ Employee::Employee() : Person()
     
 }
 
-Employee::Employee(const string id, const string& Name, const string phNum, string compId, string &currProj, int TProjH, int THrs, int exp, bool employ, int hrsPDay) : Person(id, Name, phNum)
+Employee::Employee(const string id, const string& Name, const string phNum, string compId, string &currProj, int THrs, int exp, bool employ, int hrsPDay) : Person(id, Name, phNum)
 {
 	companyId = compId;
 	currentProjectId = currProj;
-	totalProjHours = TProjH;
 	totalHours = THrs;
 	experience = exp;
 	isEmployed = employ;

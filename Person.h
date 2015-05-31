@@ -29,7 +29,7 @@ public:
 	void setName(const string& Name);
 	const string& getId() const;
 	const string getPhoneNumber() const;
-	void setPhoneNumber(const long phoneNumber) ;
+	void setPhoneNumber(const string phoneNumber) ;
     void PrintPerson();
 };
 

@@ -11,10 +11,11 @@
 #include "Headers.h"
 #include "Project.h"
 
+
 using namespace std;
 
 
-class Employee: public Person {
+class Employee : public Person {
 private:
 	string companyId;
 protected:
@@ -27,7 +28,7 @@ protected:
 	int hoursPerDay;
 public:
     Employee();
-	Employee(const string id, const string& Name, const string phNum, string compId, string& currProj, int TProjH, int THrs, int exp, bool employ, int hrsPDay);
+	Employee(const string id, const string& Name, const string phNum, string compId, string& currProj, int THrs, int exp, bool employ, int hrsPDay);
 	string getCompanyId() const;
 	const string& getCurrentProjectId() const;
     void setProjectId(string& projId);

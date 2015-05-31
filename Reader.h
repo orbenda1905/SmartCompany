@@ -9,11 +9,11 @@
 #define READER_H_
 #include <iostream>
 #include <vector>
-#include <sstream>
-#include <string>
-#include <fstream>
+//#include <sstream>
+//#include <string>
+//#include <fstream>
 #include "DataSplit.h"
-#include "SmartPtr.h"
+//#include "SmartPtr.h"
 #include "Company.h"
 
 using namespace std;
@@ -27,7 +27,7 @@ private:
     vector<string> tokens;
     DataSplit ds;
 public:
-	Reader(const char *file_name);
+	Reader(string file_name);
     virtual ~Reader();
     void ReadData();
     void MakeClient();
@@ -38,7 +38,7 @@ public:
     void MakeProject();
     void MakeProjectCycle();
     void MakeEmployee();
-    SmartPtr<Company>& getCompany();
+    SmartPtr<Company> getCompany();
 };
 
 

@@ -6,13 +6,10 @@
  */
 
 #include "Reader.h"
-#include "DataSplit.cpp"
-#include <iostream>
-#include <string>
 
 using namespace std;
 
-Reader::Reader(const char* file_name)
+Reader::Reader(string file_name)
 {
     myFile.open(file_name);
 }
@@ -46,7 +43,7 @@ void Reader::ReadData()
     }
 }
 
-SmartPtr<Company>& Reader::getCompany()
+SmartPtr<Company> Reader::getCompany()
 {
     return company;
 }
@@ -56,7 +53,7 @@ void Reader::MakeClient()
     getline(myFile,str);
     tokens = ds.Tokenize(str, tokens, ";[]#");
     cout << tokens[0] << tokens[1]<<tokens[2] <<tokens[3] <<tokens[4] << endl;
-    SmartPtr<Client> client = new Client(tokens[0],tokens[1], tokens[2],tokens[3],stoi(tokens[4]));
+    SmartPtr<Client> client = new Client(tokens[0],tokens[1], tokens[2],stoi(tokens[3]),tokens[4]);
 }
 
 void Reader::MakeCompany()

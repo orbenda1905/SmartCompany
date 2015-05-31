@@ -11,7 +11,7 @@
 #include "Person.h"
 
 
-class Client:public Person {
+class Client : public Person {
 private:
 	int totalProjcets;
 	string currentProjectId;
