@@ -140,6 +140,8 @@ void Company::startCycle(SmartPtr<ProjectCycle>& cycle, string& projId)
             cycle->addEmployee(employees.at(it->second->getId()));
         }
     }
+    cycle->start();
+    
 }
 
 

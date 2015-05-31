@@ -22,18 +22,45 @@ void ProjectCycle::addEmployee(SmartPtr<Employee>& emp){
     Manager *temp = dynamic_cast<Manager*>(&emp);
     if (temp != NULL)
     {
-        project->addManager(emp);
+        if (project->getManager() == NULL)
+        {
+            project->setManager(emp);
+            return;
+        }
         return;
+        
     }
-    if (project->checkEmployee(emp))
+    Programmer *temp1 = dynamic_cast<Programmer*>(&emp);
+    if (temp1 != NULL)
     {
-        currentProjEmployees.emplace(emp->getId(), emp);
+        if (project->addProgrammer(emp))
+        {
+            currentProjEmployees.emplace(emp->getId(), emp);
+            return;
+        }
     }
-    else
+    else if (temp1 == NULL)
     {
-        LogFile << "the employee, id: " << emp->getId() << "is not suitable for this peoject" << endl;
-        emp->setProjectId(*(new string(NULL)));
+        if (project->addArtist(emp))
+        {
+            currentProjEmployees.emplace(emp->getId(), emp);
+        }
     }
+//    }
+//    else if (project->checkEmployee(emp))
+//    {
+//        currentProjEmployees.emplace(emp->getId(), emp);
+//    }
+//    else
+//    {
+//        LogFile << "the employee, id: " << emp->getId() << "is not suitable for this peoject" << endl;
+//        emp->setProjectId(*(new string(NULL)));
+//    }
+    
+}
+
+void ProjectCycle::start()
+{
     
 }
 
