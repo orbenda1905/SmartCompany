@@ -34,7 +34,7 @@ const string Person::getPhoneNumber() const {
 	return phoneNumber;
 }
 
-void Person::setPhoneNumber(const long phoneNumber) {
+void Person::setPhoneNumber(const string phoneNumber) {
 	this->phoneNumber = phoneNumber;
 }
 
@@ -49,7 +49,7 @@ void Person::PrintPerson()
     cout<<"Name:"<<getName()<<endl;
     cout<<"Phone number:"<<getPhoneNumber()<<endl;
     
-    WriteTofile();
+    WriteToFile();
     LogFile<<"ID:"<<getId()<<endl;
     LogFile<<"Name:"<<getName()<<endl;
     LogFile<<"Phone number:"<<getPhoneNumber()<<endl;

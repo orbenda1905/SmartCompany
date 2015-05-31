@@ -27,7 +27,7 @@ protected:
 	int hoursPerDay;
 public:
     Employee();
-	Employee(const string id, const string& Name, const long phNum, string compId, string& currProj, int TProjH, int THrs, int exp, bool employ, int hrsPDay);
+	Employee(const string id, const string& Name, const string phNum, string compId, string& currProj, int TProjH, int THrs, int exp, bool employ, int hrsPDay);
 	string getCompanyId() const;
 	const string& getCurrentProjectId() const;
     void setProjectId(string& projId);

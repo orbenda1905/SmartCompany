@@ -14,15 +14,12 @@ using namespace std;
 
 Reader::Reader(const char* file_name)
 {
-    fileName = new char[strlen(file_name)+1];
-    strcpy(fileName, file_name);
+    myFile.open(file_name);
 }
 
 void Reader::ReadData()
 {
-    SmartPtr<Company> company = new Company();
-    string str;
-    ifstream myFile (fileName);
+    
     if (myFile.is_open())
     {
         while (!myFile.eof())
@@ -30,60 +27,143 @@ void Reader::ReadData()
             getline(myFile,str);
             if (str == "#INPUT-COMP\r")
             {
-                getline(myFile,str);
-                if (str[0] != '#' && str != "\r")
-                {
-                    vector<string> tokens = ds.Tokenize(str, tokens, ";");
-                    cout << tokens[0] << endl;
-                    
-                }
+                MakeCompany();
             }else if(str == "#INPUT-CLIENT\r")
             {
-                getline(myFile,str);
-                while (str[0] != '#' && str != "\r")
-                {
-                    vector<string> tokens = ds.Tokenize(str, tokens, ";");
-                    SmartPtr<Client> client = new Client();
-                    Client->
-                }
+                MakeClient();
+            }else if(str == "#INPUT-EMP\r")
+            {
+                MakeEmployee();
+            }else if (str == "#INPUT-PROJ\r")
+            {
+                MakeProject();
+            }else if (str == "#INPUT-PROJCYC\r")
+            {
+                MakeProjectCycle();
             }
+            
         }
     }
 }
 
-Reader::Reader(){
+SmartPtr<Company>& Reader::getCompany()
+{
+    return company;
+}
+
+void Reader::MakeClient()
+{
+    getline(myFile,str);
+    tokens = ds.Tokenize(str, tokens, ";[]#");
+    cout << tokens[0] << tokens[1]<<tokens[2] <<tokens[3] <<tokens[4] << endl;
+    SmartPtr<Client> client = new Client(tokens[0],tokens[1], tokens[2],tokens[3],stoi(tokens[4]));
+}
+
+void Reader::MakeCompany()
+{
+    getline(myFile,str);
+    tokens = ds.Tokenize(str,tokens, ";[]#");
+    cout << tokens[0] << endl;
+    company = new Company(tokens[0]);
+}
+
+void Reader::MakeEmployee()
+{
+    getline(myFile,str);
+    tokens = ds.Tokenize(str, tokens,";[]#");
+    if (tokens[3] == "M")
+        MakeManager();
+    if (tokens[3] == "A")
+        MakeArtist();
+    if (tokens[3] == "P")
+        MakeProgrammer();
+    else{
+        cout << "no correct employee" << endl;
+    }
     
 }
 
-  
-void Reader::Tokenize(const string& str,vector<string>& tokens,const string& delimiters){
-    // Skip delimiters at beginning.
-    string::size_type lastPos = str.find_first_not_of(delimiters, 0);
-    // Find first "non-delimiter".
-    string::size_type pos     = str.find_first_of(delimiters, lastPos);
-    
-    while (string::npos != pos || string::npos != lastPos)
+
+void Reader::MakeProgrammer()
+{
+    getline(myFile,str);
+    tokens = ds.Tokenize(str, tokens,"[];#");
+    vector<string> tempLangs;
+    vector<string> tempFlds;
+    ds.Tokenize(str, tempLangs,",");
+    ds.Tokenize(str, tempFlds,",");
+    SmartPtr<Programmer> programmer  = new Programmer(tokens[0],tokens[1],tokens[2],tokens[3],tokens[4],stoi(tokens[5]),stoi(tokens[6]),stoi(tokens[7]),stoi(tokens[8]),stoi(tokens[9]),tempLangs,tempFlds);
+    for (vector<string>::iterator it = tokens.begin(); it != tokens.end(); it++)
     {
-        // Found a token, add it to the vector.
-        tokens.push_back(str.substr(lastPos, pos - lastPos));
-        // Skip delimiters.  Note the "not_of"
-        lastPos = str.find_first_not_of(delimiters, pos);
-        // Find next "non-delimiter"
-        pos = str.find_first_of(delimiters, lastPos);
+        cout << *it << endl;
+    }
+    
+}
+
+void Reader::MakeManager()
+{
+    getline(myFile,str);
+    tokens = ds.Tokenize(str, tokens,"[];#");
+    vector<string> fieldA;
+    vector<string> fieldP;
+    vector<string> knwdP;
+    ds.Tokenize(str, knwdP,",");
+    ds.Tokenize(str, fieldP,",");
+    ds.Tokenize(str, fieldA,",");
+    SmartPtr<Manager> manager  = new Manager(tokens[0],tokens[1],tokens[2],tokens[3],tokens[4],stoi(tokens[5]),stoi(tokens[6]),stoi(tokens[7]),stoi(tokens[8]),stoi(tokens[9]),knwdP,fieldP,fieldA);
+    for (vector<string>::iterator it = tokens.begin(); it != tokens.end(); it++)
+    {
+        cout << *it << endl;
+    }
+
+}
+
+void Reader::MakeArtist()
+{
+    getline(myFile,str);
+    tokens = ds.Tokenize(str, tokens,"[];#");
+    vector<string> flds;
+    ds.Tokenize(str, flds,",");
+    SmartPtr<Artist> artist  = new Artist(tokens[0],tokens[1],tokens[2],tokens[3],tokens[4],stoi(tokens[5]),stoi(tokens[6]),stoi(tokens[7]),stoi(tokens[8]),stoi(tokens[9]),flds);
+    for (vector<string>::iterator it = tokens.begin(); it != tokens.end(); it++)
+    {
+        cout << *it << endl;
+    }
+}
+
+void Reader::MakeProject()
+{
+    getline(myFile,str);
+    tokens = ds.Tokenize(str, tokens,"[];#");
+    vector<string> pFld;
+    vector<string> aFld;
+    ds.Tokenize(str, aFld,",");
+    ds.Tokenize(str, pFld,",");
+    SmartPtr<Project> project  = new Project(tokens[0],tokens[1],stoi(tokens[2]),stoi(tokens[3]),stoi(tokens[4]),stoi(tokens[5]),pFld,aFld);
+    for (vector<string>::iterator it = tokens.begin(); it != tokens.end(); it++)
+    {
+        cout << *it << endl;
+    }
+}
+
+void Reader::MakeProjectCycle()
+{
+    getline(myFile,str);
+    tokens = ds.Tokenize(str, tokens,"[];#");
+    company->addProjCycle(tokens[0], tokens[1]);
+    for (vector<string>::iterator it = tokens.begin(); it != tokens.end(); it++)
+    {
+        cout << *it << endl;
     }
 }
 
 
 
-
-Reader::~Reader() {
+Reader::~Reader()
+{
 	
 }
 
 
-/*
- ifstream f(file_name);
- char* line = get_line(f);
- SmartPtr<Company> company = new Company(line);
- 
- */
+
+

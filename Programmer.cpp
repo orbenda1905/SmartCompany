@@ -13,7 +13,7 @@ Programmer::Programmer() : Employee()
 }
 
 
-Programmer::Programmer(const string id, const string& Name, const long phNum, string compId, string *currProj, int TProjH, int THrs, int exp, bool employ, int hrsPDay, vector<string>& langs, vector<string>& flds) : Employee(id, Name, phNum, compId, currProj, TProjH, THrs, exp, employ, hrsPDay){
+Programmer::Programmer(const string id, const string& Name, const string phNum, string compId, string currProj, int TProjH, int THrs, int exp, bool employ, int hrsPDay, vector<string>& langs, vector<string>& flds) : Employee(id, Name, phNum, compId, currProj, TProjH, THrs, exp, employ, hrsPDay){
 	
 	
     knowedLangs = langs;
@@ -62,7 +62,7 @@ cout<<"Experience:"<<getExperience()<<endl;
 cout<<"Total project hours"<<getTotalProjHours()<<endl;
 cout<<"Hours per day"<<getHoursPerDay()<<endl;
 cout<<"Current project ID"<<getCurrentProjectId()<<endl;
-cout<<"Total project work"<<getTotalprojwork()<<endl;
+cout<<"Total project work"<<getTotalProjHours()<<endl;
 cout<<"The Programmer field:"<<endl;
     for (int i=0; i<fields.size();i++){
         cout << fields[i] <<",";
@@ -80,7 +80,7 @@ cout<<"The programmer knowd languges:"<<endl;
     LogFile<<"Total project hours"<<getTotalProjHours()<<endl;
     LogFile<<"Hours per day"<<getHoursPerDay()<<endl;
     LogFile<<"Current project ID"<<getCurrentProjectId()<<endl;
-    LogFile<<"Total project work"<<getTotalprojwork()<<endl;
+    LogFile<<"Total project work"<<getTotalProjHours()<<endl;
     LogFile<<"The Programmer field:"<<endl;
     for (int i=0; i<fields.size();i++){
         LogFile << fields[i] <<",";

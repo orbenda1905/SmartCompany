@@ -21,18 +21,26 @@ using namespace std;
 
 class Reader {
 private:
-    char* fileName;
+    ifstream myFile;
+    SmartPtr<Company> company;
+    string str;
+    vector<string> tokens;
+    DataSplit ds;
 public:
 	Reader(const char *file_name);
     virtual ~Reader();
-    Reader(const char* file_name);
-    vector<string> split(const string s, char c);
-    void Tokenize(const string& str,vector<string>& tokens,const string& delimiters);
-
-    
-
-    
+    void ReadData();
+    void MakeClient();
+    void MakeCompany();
+    void MakeProgrammer();
+    void MakeManager();
+    void MakeArtist();
+    void MakeProject();
+    void MakeProjectCycle();
+    void MakeEmployee();
+    SmartPtr<Company>& getCompany();
 };
+
 
 
 #endif /* defined(__SmartPointer__DataSplit__) */
