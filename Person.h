@@ -23,7 +23,7 @@ protected:
 	
 public:
     Person();
-	Person(const string id, const string& Name, const string phNum);
+	Person(const string Name, const string pId, const string phNum);
 	virtual ~Person();
 	const string& getName() const;
 	void setName(const string& Name);

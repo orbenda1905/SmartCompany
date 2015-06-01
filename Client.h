@@ -17,7 +17,7 @@ private:
 	string currentProjectId;
     bool projFinished = false;
 public:
-	Client(const string id, const string& Name, const string phNum, int tProjects, string curProjId);
+	Client(const string Name, const string pId, const string phNum, int tProjects, string curProjId);
 	virtual ~Client();
     void PrintClient();
     bool getProjFinished();

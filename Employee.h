@@ -21,14 +21,14 @@ private:
 protected:
 	string currentProjectId;
 	int soFarProjHours; //how many worked so far for this project
-    int neededProjectHours = 0; //how many hours he needs to do for this project
+    int neededProjectHours; //how many hours he needs to do for this project
 	int totalHours;
 	int experience;
 	bool isEmployed;
 	int hoursPerDay;
 public:
     Employee();
-	Employee(const string id, const string& Name, const string phNum, string compId, string& currProj, int THrs, int exp, bool employ, int hrsPDay);
+	Employee(const string Name, const string pId, const string phNum, string compId, int THrs, string currProj, int currProjHrs, int exp, int hrsPDay, bool employ);
 	string getCompanyId() const;
 	const string& getCurrentProjectId() const;
     void setProjectId(string& projId);

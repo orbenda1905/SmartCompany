@@ -8,7 +8,7 @@
 #include "Manager.h"
 
 
-Manager::Manager(const string id, const string& Name, const string phNum, string compId, string& currProj, int TProjH, int THrs, int exp, bool employ, int hrsPDay, vector<string>& knwdP, vector<string>& fieldP, vector<string>& fieldA) : Employee(id, Name, phNum, compId, currProj, TProjH, THrs, exp, employ, hrsPDay)
+Manager::Manager(const string id, const string& Name, const string phNum, string compId, string& currProj, int THrs, int exp, bool employ, int hrsPDay, vector<string>& knwdP, vector<string>& fieldP, vector<string>& fieldA) : Employee(id, Name, phNum, compId, currProj, THrs, exp, employ, hrsPDay)
     {
         knowedLangs = knwdP;
         Programmer::fields = fieldP;

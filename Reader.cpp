@@ -50,6 +50,7 @@ SmartPtr<Company> Reader::getCompany()
 
 void Reader::MakeClient()
 {
+    tokens.clear();
     getline(myFile,str);
     tokens = ds.Tokenize(str, tokens, ";[]#");
     cout << tokens[0] << tokens[1]<<tokens[2] <<tokens[3] <<tokens[4] << endl;
@@ -58,6 +59,7 @@ void Reader::MakeClient()
 
 void Reader::MakeCompany()
 {
+    tokens.clear();
     getline(myFile,str);
     tokens = ds.Tokenize(str,tokens, ";[]#");
     cout << tokens[0] << endl;
@@ -66,6 +68,7 @@ void Reader::MakeCompany()
 
 void Reader::MakeEmployee()
 {
+    tokens.clear();
     getline(myFile,str);
     tokens = ds.Tokenize(str, tokens,";[]#");
     if (tokens[3] == "M")
@@ -83,13 +86,12 @@ void Reader::MakeEmployee()
 
 void Reader::MakeProgrammer()
 {
-    getline(myFile,str);
     tokens = ds.Tokenize(str, tokens,"[];#");
     vector<string> tempLangs;
     vector<string> tempFlds;
     ds.Tokenize(str, tempLangs,",");
     ds.Tokenize(str, tempFlds,",");
-    SmartPtr<Programmer> programmer  = new Programmer(tokens[0],tokens[1],tokens[2],tokens[3],tokens[4],stoi(tokens[5]),stoi(tokens[6]),stoi(tokens[7]),stoi(tokens[8]),stoi(tokens[9]),tempLangs,tempFlds);
+    SmartPtr<Programmer> programmer  = new Programmer(tokens[0],tokens[1],tokens[2],tokens[4],stoi(tokens[5]),stoi(tokens[6]),stoi(tokens[7]),stoi(tokens[8]),stoi(tokens[9]),tempLangs,tempFlds);
     for (vector<string>::iterator it = tokens.begin(); it != tokens.end(); it++)
     {
         cout << *it << endl;
@@ -104,10 +106,15 @@ void Reader::MakeManager()
     vector<string> fieldA;
     vector<string> fieldP;
     vector<string> knwdP;
+    int tHours = 0;
+    if (tokens[6] != "NULL")
+    {
+        stoi(tokens[6]);
+    }
     ds.Tokenize(str, knwdP,",");
     ds.Tokenize(str, fieldP,",");
     ds.Tokenize(str, fieldA,",");
-    SmartPtr<Manager> manager  = new Manager(tokens[0],tokens[1],tokens[2],tokens[3],tokens[4],stoi(tokens[5]),stoi(tokens[6]),stoi(tokens[7]),stoi(tokens[8]),stoi(tokens[9]),knwdP,fieldP,fieldA);
+    SmartPtr<Manager> manager  = new Manager(tokens[0],tokens[1],tokens[2],tokens[3],tokens[4],stoi(tokens[5]),tHours,stoi(tokens[7]),stoi(tokens[8]),stoi(tokens[9]),knwdP,fieldP,fieldA);
     for (vector<string>::iterator it = tokens.begin(); it != tokens.end(); it++)
     {
         cout << *it << endl;

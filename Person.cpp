@@ -12,8 +12,8 @@ Person::Person()
     
 }
 
-Person::Person(const string id, const string& Name, const string phNum) {
-	this->id = id;
+Person::Person(const string Name, const string pId, const string phNum) {
+	this->id = pId;
 	name = Name;
 	phoneNumber = phNum;
 }

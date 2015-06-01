@@ -7,7 +7,7 @@
 
 #include "Client.h"
 
-Client::Client(const string id, const string& Name, const string phNum, int tProjects, string curProjId) : Person(id, Name, phNum)
+Client::Client(const string Name, const string pId, const string phNum, int tProjects, string curProjId) : Person(Name, pId, phNum)
 {
 	
 	totalProjcets = tProjects;

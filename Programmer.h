@@ -22,7 +22,7 @@ protected:
 	vector<string> fields;
 public:
     Programmer();
-	Programmer(const string id, const string& Name, const string phNum, string compId, string currProj, int TProjH, int THrs, int exp, bool employ, int hrsPDay, vector<string>& langs, vector<string>& flds);
+	Programmer(const string Name, const string pId, const string phNum, string compId, int THrs, string currProj, int currProjHrs, int exp, int hrsPDay, bool employ, vector<string> langs, vector<string> flds);
 	virtual ~Programmer();
 	virtual vector<string>& getFields();
 	virtual vector<string>& getKnowedLangs();
