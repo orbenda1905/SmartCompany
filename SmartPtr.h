@@ -133,6 +133,7 @@ public:
     {
         if (GetPtr()!=NULL)
             return GetPtr();
+        return NULL;
     }
     // conversion to T* (for function calls)
     operator T* () const

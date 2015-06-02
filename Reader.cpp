@@ -52,7 +52,7 @@ void Reader::MakeClient()
 {
     tokens.clear();
     getline(myFile,str);
-    tokens = ds.Tokenize(str, tokens, ";[]#");
+    ds.Tokenize(str, tokens, ";[]#");
     cout << tokens[0] << tokens[1]<<tokens[2] <<tokens[3] <<tokens[4] << endl;
     SmartPtr<Client> client = new Client(tokens[0],tokens[1], tokens[2],stoi(tokens[3]),tokens[4]);
 }
@@ -61,7 +61,7 @@ void Reader::MakeCompany()
 {
     tokens.clear();
     getline(myFile,str);
-    tokens = ds.Tokenize(str,tokens, ";[]#");
+    ds.Tokenize(str,tokens, ";[]#");
     cout << tokens[0] << endl;
     company = new Company(tokens[0]);
 }
@@ -70,7 +70,7 @@ void Reader::MakeEmployee()
 {
     tokens.clear();
     getline(myFile,str);
-    tokens = ds.Tokenize(str, tokens,";[]#");
+    ds.Tokenize(str, tokens,";[]#");
     if (tokens[3] == "M")
         MakeManager();
     if (tokens[3] == "A")
@@ -86,7 +86,7 @@ void Reader::MakeEmployee()
 
 void Reader::MakeProgrammer()
 {
-    tokens = ds.Tokenize(str, tokens,"[];#");
+    ds.Tokenize(str, tokens,"[];#");
     vector<string> tempLangs;
     vector<string> tempFlds;
     ds.Tokenize(tokens[11], tempLangs,",");
@@ -101,7 +101,8 @@ void Reader::MakeProgrammer()
 
 void Reader::MakeManager()
 {
-    tokens = ds.Tokenize(str, tokens,"[];#");
+    
+    ds.Tokenize(str, tokens,"[];#");
     vector<string> fieldA;
     vector<string> fieldP;
     vector<string> knwdP;
@@ -119,7 +120,7 @@ void Reader::MakeManager()
 void Reader::MakeArtist()
 {
     getline(myFile,str);
-    tokens = ds.Tokenize(str, tokens,"[];#");
+    ds.Tokenize(str, tokens,"[];#");
     vector<string> flds;
     ds.Tokenize(tokens[11], flds,",");
     SmartPtr<Artist> artist  = new Artist(tokens[0],tokens[1],tokens[2],tokens[4],stoi(tokens[5]),tokens[6],stoi(tokens[7]),stoi(tokens[8]),stoi(tokens[9]),stoi(tokens[10]),flds);
@@ -131,8 +132,9 @@ void Reader::MakeArtist()
 
 void Reader::MakeProject()
 {
+    tokens.clear();
     getline(myFile,str);
-    tokens = ds.Tokenize(str, tokens,"[];#");
+    ds.Tokenize(str, tokens,"[];#");
     vector<string> pFld;
     vector<string> aFld;
     ds.Tokenize(str, aFld,",");
@@ -146,8 +148,9 @@ void Reader::MakeProject()
 
 void Reader::MakeProjectCycle()
 {
+    tokens.clear();
     getline(myFile,str);
-    tokens = ds.Tokenize(str, tokens,"[];#");
+    ds.Tokenize(str, tokens,"[];#");
     company->addProjCycle(tokens[0], tokens[1]);
     for (vector<string>::iterator it = tokens.begin(); it != tokens.end(); it++)
     {

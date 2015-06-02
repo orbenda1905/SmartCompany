@@ -23,7 +23,5 @@ public:
     
 };
 
-static ofstream output("Logger.txt", ios_base::app);
 
-ofstream& WriteToFile::LogFile = output;
 #endif /* defined(__SmartPtr__WriteToFile__) */

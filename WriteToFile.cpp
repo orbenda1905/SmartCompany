@@ -9,7 +9,9 @@
 
 #include "WriteToFile.h"
 
+static ofstream output("Logger.txt", ios_base::app);
 
+ofstream& WriteToFile::LogFile = output;
 
 
 WriteToFile::WriteToFile(){

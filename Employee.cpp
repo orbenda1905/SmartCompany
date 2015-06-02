@@ -122,6 +122,10 @@ void Employee::printEmployee()
     LogFile << "Hours per day: " << hoursPerDay << endl;
 }
 
+Employee::~Employee()
+{
+    
+}
 
 
 

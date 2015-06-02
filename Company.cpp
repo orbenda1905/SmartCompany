@@ -22,7 +22,7 @@ void Company::addEmployee(SmartPtr<Employee> newWorker)
     }
     else
     {
-        employees.emplace(newWorker, newWorker->getId());
+        employees.emplace(newWorker->getId(), newWorker);
     }
     return;
 }
