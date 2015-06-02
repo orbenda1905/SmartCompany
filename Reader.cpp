@@ -89,9 +89,9 @@ void Reader::MakeProgrammer()
     tokens = ds.Tokenize(str, tokens,"[];#");
     vector<string> tempLangs;
     vector<string> tempFlds;
-    ds.Tokenize(str, tempLangs,",");
-    ds.Tokenize(str, tempFlds,",");
-    SmartPtr<Programmer> programmer  = new Programmer(tokens[0],tokens[1],tokens[2],tokens[4],stoi(tokens[5]),stoi(tokens[6]),stoi(tokens[7]),stoi(tokens[8]),stoi(tokens[9]),tempLangs,tempFlds);
+    ds.Tokenize(tokens[11], tempLangs,",");
+    ds.Tokenize(tokens[12], tempFlds,",");
+    SmartPtr<Programmer> programmer  = new Programmer(tokens[0],tokens[1],tokens[2],tokens[4],stoi(tokens[5]),tokens[6],stoi(tokens[7]),stoi(tokens[8]),stoi(tokens[9]),stoi(tokens[10]),tempLangs,tempFlds);
     for (vector<string>::iterator it = tokens.begin(); it != tokens.end(); it++)
     {
         cout << *it << endl;
@@ -101,20 +101,14 @@ void Reader::MakeProgrammer()
 
 void Reader::MakeManager()
 {
-    getline(myFile,str);
     tokens = ds.Tokenize(str, tokens,"[];#");
     vector<string> fieldA;
     vector<string> fieldP;
     vector<string> knwdP;
-    int tHours = 0;
-    if (tokens[6] != "NULL")
-    {
-        stoi(tokens[6]);
-    }
-    ds.Tokenize(str, knwdP,",");
-    ds.Tokenize(str, fieldP,",");
-    ds.Tokenize(str, fieldA,",");
-    SmartPtr<Manager> manager  = new Manager(tokens[0],tokens[1],tokens[2],tokens[3],tokens[4],stoi(tokens[5]),tHours,stoi(tokens[7]),stoi(tokens[8]),stoi(tokens[9]),knwdP,fieldP,fieldA);
+    ds.Tokenize(tokens[11], knwdP,",");
+    ds.Tokenize(tokens[12], fieldP,",");
+    ds.Tokenize(tokens[13], fieldA,",");
+    SmartPtr<Manager> manager  = new Manager(tokens[0],tokens[1],tokens[2],tokens[4],stoi(tokens[5]),tokens[6],stoi(tokens[7]),stoi(tokens[8]),stoi(tokens[9]),stoi(tokens[10]),knwdP,fieldP,fieldA);
     for (vector<string>::iterator it = tokens.begin(); it != tokens.end(); it++)
     {
         cout << *it << endl;
@@ -127,8 +121,8 @@ void Reader::MakeArtist()
     getline(myFile,str);
     tokens = ds.Tokenize(str, tokens,"[];#");
     vector<string> flds;
-    ds.Tokenize(str, flds,",");
-    SmartPtr<Artist> artist  = new Artist(tokens[0],tokens[1],tokens[2],tokens[3],tokens[4],stoi(tokens[5]),stoi(tokens[6]),stoi(tokens[7]),stoi(tokens[8]),stoi(tokens[9]),flds);
+    ds.Tokenize(tokens[11], flds,",");
+    SmartPtr<Artist> artist  = new Artist(tokens[0],tokens[1],tokens[2],tokens[4],stoi(tokens[5]),tokens[6],stoi(tokens[7]),stoi(tokens[8]),stoi(tokens[9]),stoi(tokens[10]),flds);
     for (vector<string>::iterator it = tokens.begin(); it != tokens.end(); it++)
     {
         cout << *it << endl;

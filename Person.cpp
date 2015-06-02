@@ -45,15 +45,9 @@ Person::~Person() {
 //change check again and again
 void Person::PrintPerson()
 {
-    cout<<"ID:"<<getId()<<endl;
-    cout<<"Name:"<<getName()<<endl;
-    cout<<"Phone number:"<<getPhoneNumber()<<endl;
-    
-    WriteToFile();
-    LogFile<<"ID:"<<getId()<<endl;
-    LogFile<<"Name:"<<getName()<<endl;
-    LogFile<<"Phone number:"<<getPhoneNumber()<<endl;
-
+    string temp = {"ID: " + id + "\nName: " + name + "\nPhone: " + phoneNumber};
+    cout << temp;
+    LogFile << temp;
 }
 
 

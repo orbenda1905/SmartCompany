@@ -19,7 +19,7 @@ Artist::Artist(const string Name, const string pId, const string phNum, string c
 }
 
 Artist::~Artist() {
-	// TODO Auto-generated destructor stub
+	
 }
 
 
@@ -29,46 +29,24 @@ vector<string>& Artist::getFields() {
 
 
 
-void Artist::setFields(vector<string>& fields) {
+void Artist::setFields(vector<string> fields) {
 	this->fields = fields;
 }
 
-void Artist::PrintArtist(){
-    cout<<"The artist fieldes are:"<<endl;
-    for (int i=0; i<fields.size();i++){
-        cout << fields[i] << endl;
-    }
-    
+void  Artist::printArtist()
+{
+    printEmployee();
+    printFields();
+
 }
-void  Artist::Print(){
 
-    
-    PrintPerson();
-    cout<<getCompanyId()<<endl;
-    cout<<"Total Hours:"<<getTotalHours()<<endl;
-    cout<<"Experience:"<<getExperience()<<endl;
-    cout<<"Total project hours"<<getTotalProjHours()<<endl;
-    cout<<"Hours per day"<<getHoursPerDay()<<endl;
-    cout<<"Current project ID"<<getCurrentProjectId()<<endl;
-    cout<<"Total project work"<<getTotalprojwork()<<endl;
-    cout<<"The artist fieldes are:"<<endl;
+void Artist::printFields()
+{
+    cout<<"Fields:"<<endl;
+    LogFile << "Fields: " << endl;
     for (int i=0; i<fields.size();i++){
         cout << fields[i] << endl;
-    }
-
-    
-    LogFile<<getCompanyId()<<endl;
-    LogFile<<"Total Hours:"<<getTotalHours()<<endl;
-    LogFile<<"Experience:"<<getExperience()<<endl;
-    LogFile<<"Total project hours"<<getTotalProjHours()<<endl;
-    LogFile<<"Hours per day"<<getHoursPerDay()<<endl;
-    LogFile<<"Current project ID"<<getCurrentProjectId()<<endl;
-    LogFile<<"Total project work"<<getTotalprojwork()<<endl;
-    LogFile<<"The artist fieldes are:"<<endl;
-    for (int i=0; i<fields.size();i++){
         LogFile << fields[i] << endl;
     }
- 
 }
-
 

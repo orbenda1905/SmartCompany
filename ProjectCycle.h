@@ -10,6 +10,8 @@
 #include "Headers.h"
 #include "Employee.h"
 #include "WriteToFile.h"
+#include "Project.h"
+#include "Manager.h"
 
 class ProjectCycle : public WriteToFile {
 private:

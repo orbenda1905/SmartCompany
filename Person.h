@@ -8,6 +8,7 @@
 #ifndef PERSON_H_
 #define PERSON_H_
 #include "Headers.h"
+#include "WriteToFile.h"
 
 using namespace std;
 

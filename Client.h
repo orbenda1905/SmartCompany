@@ -11,9 +11,10 @@
 #include "Person.h"
 
 
+
 class Client : public Person {
 private:
-	int totalProjcets;
+	int totalProjects;
 	string currentProjectId;
     bool projFinished = false;
 public:

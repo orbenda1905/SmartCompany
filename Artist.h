@@ -24,9 +24,9 @@ public:
 	Artist(const string Name, const string pId, const string phNum, string compId, int THrs, string currProj, int currProjHrs, int exp, int hrsPDay, bool employ, vector<string> flds);
 	virtual ~Artist();
 	virtual vector<string>& getFields();
-	virtual void setFields(vector<string>& fields);
-    void Print();
-    void PrintArtist();
+	virtual void setFields(vector<string> fields);
+    void printFields();
+    void printArtist();
 };
 
 #endif /* ARTIST_H_ */

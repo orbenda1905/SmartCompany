@@ -9,7 +9,7 @@
 #ifndef __SmartPtr__WriteToFile__
 #define __SmartPtr__WriteToFile__
 
-#include <stdio.h>
+#include <iostream>
 #include <fstream>
 using namespace std;
 class WriteToFile{

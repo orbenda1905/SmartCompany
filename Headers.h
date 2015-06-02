@@ -11,7 +11,8 @@
 #include <map>
 #include <vector>
 #include <fstream>
-#include "WriteToFile.h"
+#include "SmartPtr.h"
+//#include "WriteToFile.h"
 using namespace std;
 
 typedef enum FieldProg {FEND, SEC, MBL, BEND} FieldProg;

@@ -281,6 +281,7 @@ Project::~Project()
     finishedWorkers.clear();
     client->setProjFinished(true);
     delete client;
+    delete manager;
 }
 
 void Project::checkFinish()
@@ -301,6 +302,11 @@ void Project::checkFinish()
             programmers.erase(it->second->getId());
         }
     }
+}
+
+bool Project::getManagerOccupied()
+{
+    return managerOccupied;
 }
 
 

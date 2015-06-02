@@ -9,8 +9,7 @@
 #define EMPLOYEE_H_
 
 #include "Headers.h"
-#include "Project.h"
-
+#include "Person.h"
 
 using namespace std;
 
@@ -43,13 +42,12 @@ public:
 	int getSoFarProjHours() const;
 	void setSoFarProjHours(int soFarProjHours);
     void speedUp();
-    virtual void Print()=0;
     int getNeededProjectHours() const;
     void setNeededProjectHours(int num);
     const string& getId() const;
     void eraseProjId();
     bool getIsEmployed();
-
+    void printEmployee();
 	~Employee();
 };
 

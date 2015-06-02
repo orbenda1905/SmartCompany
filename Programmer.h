@@ -26,10 +26,10 @@ public:
 	virtual ~Programmer();
 	virtual vector<string>& getFields();
 	virtual vector<string>& getKnowedLangs();
-	void setKnowedLangs(vector<string>& langs);
-	virtual void setFields(vector<string>& field);
-    void Print();
-    void PrintProg();
+	void setKnowedLangs(vector<string> langs);
+	virtual void setFields(vector<string> field);
+    void printFields();
+    void printProgrammer();
 };
 
 

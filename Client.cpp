@@ -10,7 +10,7 @@
 Client::Client(const string Name, const string pId, const string phNum, int tProjects, string curProjId) : Person(Name, pId, phNum)
 {
 	
-	totalProjcets = tProjects;
+	totalProjects = tProjects;
 	currentProjectId = curProjId;
 
 }
@@ -20,11 +20,12 @@ Client::~Client() {
 }
 
 void Client::PrintClient(){
+    PrintPerson();
     
-    cout<<"client total projects:"<<totalProjcets<<endl;
+    cout<<"\nclient total projects:"<<totalProjects<<endl;
     cout<<"The client current project"<<currentProjectId<<endl;
     
-    LogFile<<"client total projects:"<<totalProjcets<<endl;
+    LogFile<<"\nclient total projects:"<<totalProjects<<endl;
     LogFile<<"The client current project"<<currentProjectId<<endl;
 }
 

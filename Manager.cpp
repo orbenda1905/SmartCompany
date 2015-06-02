@@ -8,7 +8,7 @@
 #include "Manager.h"
 
 
-Manager::Manager(const string id, const string& Name, const string phNum, string compId, string& currProj, int THrs, int exp, bool employ, int hrsPDay, vector<string>& knwdP, vector<string>& fieldP, vector<string>& fieldA) : Employee(id, Name, phNum, compId, currProj, THrs, exp, employ, hrsPDay)
+Manager::Manager(const string Name, const string pId, const string phNum, string compId, int THrs, string currProj, int currProjHrs, int exp, int hrsPDay, bool employ, vector<string> knwdP, vector<string> fieldP, vector<string> fieldA) : Employee(Name, pId, phNum, compId, THrs, currProj, currProjHrs, exp, hrsPDay, employ), Artist(), Programmer()
     {
         knowedLangs = knwdP;
         Programmer::fields = fieldP;
@@ -22,14 +22,11 @@ Manager::~Manager() {
 }
 
 void Manager::Printmanger(){
-    LogFile<<"The project count:"<<projCount<<endl;
-    LogFile<<"Total Projects:"<<totalProjects<<endl;
-    
-    cout<<"The project count:"<<projCount<<endl;
-    cout<<"Total Projects:"<<totalProjects<<endl;
-    PrintPerson();
-    Artist::Print();
-    Programmer::Print();
+    printEmployee();
+    Programmer::printFields();
+    Artist::printFields();
+    cout << "Projects amount: " << projCount << endl;
+    LogFile << "Projects amount: " << projCount << endl;
     
     
     

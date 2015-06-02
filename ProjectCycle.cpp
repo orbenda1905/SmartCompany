@@ -22,7 +22,7 @@ void ProjectCycle::addEmployee(SmartPtr<Employee>& emp){
     Manager *temp = dynamic_cast<Manager*>(&emp);
     if (temp != NULL)
     {
-        if (project->getManager() == NULL)
+        if (!project->getManagerOccupied())
         {
             project->setManager(emp);
             return;
@@ -72,8 +72,6 @@ void ProjectCycle::speedUp(){
         delete project;
         currentProjEmployees.clear();
     }
-    
-    
 
 }
 

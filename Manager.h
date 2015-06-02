@@ -17,9 +17,8 @@ using namespace std;
 class Manager : public Programmer, public Artist {
 private:
 	int projCount;
-	int totalProjects;
 public:
-	Manager(const string id, const string& Name, const string phNum, string compId, string& currProj, int THrs, int exp, bool employ, int hrsPDay, vector<string>& knwdP, vector<string>& fieldP, vector<string>& fieldA);
+	Manager(const string Name, const string pId, const string phNum, string compId, int THrs, string currProj, int currProjHrs, int exp, int hrsPDay, bool employ, vector<string> knwdP, vector<string> fieldP, vector<string> fieldA);
 	virtual ~Manager();
     void Printmanger();
 

@@ -12,8 +12,7 @@ Company::Company(string name) {
 	this->name = name;
 }
 
-
-void Company::addEmployee(SmartPtr<Employee>& newWorker)
+void Company::addEmployee(SmartPtr<Employee> newWorker)
 {
     if (checkIfEmployeeExist(newWorker->getId()))
     {
@@ -37,7 +36,7 @@ void Company::speedUp()
     }
 }
 
-void Company::addProjCycle(string& projId, string& date){
+void Company::addProjCycle(string projId, string date){
     if (checkifCycleExist(projId)){
         cout << "project cycle already exist" << endl;
         return;
@@ -51,7 +50,7 @@ void Company::addProjCycle(string& projId, string& date){
     return;
 }
 
-void Company::addProject(SmartPtr<Project>& newProject)
+void Company::addProject(SmartPtr<Project> newProject)
 {
     if (checkIfProjectExist(newProject->getProjId()))
     {
@@ -66,7 +65,7 @@ void Company::addProject(SmartPtr<Project>& newProject)
     return;
 }
 
-void Company::addClient(SmartPtr<Client>& newClient)
+void Company::addClient(SmartPtr<Client> newClient)
 {
     if (checkIfClientExist(newClient->getId()))
     {
@@ -82,8 +81,12 @@ void Company::addClient(SmartPtr<Client>& newClient)
 }
 
 Company::~Company() {
-
+    clients.clear();
+    employees.clear();
+    projects.clear();
+    cycles.clear();
 }
+
 void Company::ForceQuit(string ProjectName){
     
     if (cycles.count(ProjectName)==1) {

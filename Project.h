@@ -29,6 +29,7 @@ private:
 	int artistsNumber;
     bool fullyRecruit = false;
     bool needToRemove = false;
+    bool managerOccupied = false;
 	vector<string> progWorkField;
     vector<string> progLangs;
 	vector<string> artWorkField;
@@ -41,6 +42,7 @@ private:
 
 public:
 	Project(string name, string id, int ttlHrs, int hrsLft, int progCnt, int artCnt, vector<string>& pFld,vector<string>& aFld);
+    ~Project();
 	int getArtistsNumber() const;
 	void setArtistsNumber(int artistsNumber);
 	const vector<string>& getArtWorkField() const;
@@ -72,6 +74,7 @@ public:
     void finishProject();
     void dismissEmployee(SmartPtr<Employee>& emp);
     bool getNeedToRemove();
+    bool getManagerOccupied();
 
 };
 
