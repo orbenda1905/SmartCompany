@@ -8,12 +8,16 @@
 #include "Project.h"
 
 
-Project::Project(string name, string id, int ttlHrs, int hrsLft, int progCnt, int artCnt, vector<string>& pFld,vector<string>& aFld)
+Project::Project(string name, string prId, int ttlHrs, int hrsLft, string mangr, int progCnt, int artCnt, vector<string>& pFld,vector<string>& aFld)
 {
 	projectName = name;
-	projId = id;
+	projId = prId;
 	totalHours = ttlHrs;
 	hoursLeft = hrsLft;
+    if (mangr != "NULL")
+    {
+        managerId = mangr;
+    }
 	programmersNumber = progCnt;
 	artistsNumber = artCnt;
 	progWorkField = pFld;
@@ -309,4 +313,8 @@ bool Project::getManagerOccupied()
     return managerOccupied;
 }
 
+string Project::getManagerId()
+{
+    return managerId;
+}
 

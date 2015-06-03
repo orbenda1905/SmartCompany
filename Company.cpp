@@ -14,7 +14,7 @@ Company::Company(string name) {
 
 void Company::addEmployee(SmartPtr<Employee> newWorker)
 {
-    if (checkIfEmployeeExist(newWorker->getId()))
+    if (checkIfEmployeeExist(newWorker->getCompanyId()))
     {
         cout << "employee already exist" << endl;
         delete newWorker;
@@ -22,7 +22,7 @@ void Company::addEmployee(SmartPtr<Employee> newWorker)
     }
     else
     {
-        employees.emplace(newWorker->getId(), newWorker);
+        employees.emplace(newWorker->getCompanyId(), newWorker);
     }
     return;
 }
@@ -81,16 +81,16 @@ void Company::addClient(SmartPtr<Client> newClient)
 }
 
 Company::~Company() {
+    cycles.clear();
     clients.clear();
     employees.clear();
     projects.clear();
-    cycles.clear();
 }
 
 void Company::ForceQuit(string ProjectName){
     
     if (cycles.count(ProjectName)==1) {
-        
+        cycles.erase(ProjectName);
     }
 }
 /*
@@ -138,13 +138,12 @@ void Company::startCycle(SmartPtr<ProjectCycle>& cycle, string& projId)
 {
     for (map<string, SmartPtr<Employee>>::iterator it = employees.begin(); it != employees.end(); ++it)
     {
+        if (it->second->getIsEmployed()) continue;
         if (it->second->getCurrentProjectId() == projId)
         {
-            cycle->addEmployee(employees.at(it->second->getId()));
+            cycle->addEmployee(it->second);
         }
     }
-    cycle->start();
-    
 }
 
 

@@ -52,10 +52,6 @@ void Employee::setHoursPerDay(int hoursPerDay) {
 	this->hoursPerDay = hoursPerDay;
 }
 
-bool Employee::isIsEmployed() const {
-	return isEmployed;
-}
-
 void Employee::setIsEmployed(bool isEmployed) {
 	this->isEmployed = isEmployed;
 }

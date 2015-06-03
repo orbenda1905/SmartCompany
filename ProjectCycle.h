@@ -25,7 +25,6 @@ public:
     void addEmployee(SmartPtr<Employee>& emp);
 	virtual ~ProjectCycle();
     void checkFinishedEmployee();
-    void start();
     void speedUp();
 };
 

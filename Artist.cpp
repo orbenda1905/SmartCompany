@@ -19,7 +19,7 @@ Artist::Artist(const string Name, const string pId, const string phNum, string c
 }
 
 Artist::~Artist() {
-	
+    fields.clear();
 }
 
 

@@ -15,7 +15,8 @@ ProjectCycle::ProjectCycle(SmartPtr<Project> project, string& date) : WriteToFil
 
 
 ProjectCycle::~ProjectCycle() {
-	// TODO Auto-generated destructor stub
+    currentProjEmployees.clear();
+    delete project;
 }
 
 void ProjectCycle::addEmployee(SmartPtr<Employee>& emp){
@@ -24,8 +25,16 @@ void ProjectCycle::addEmployee(SmartPtr<Employee>& emp){
     {
         if (!project->getManagerOccupied())
         {
-            project->setManager(emp);
-            return;
+            if (project->getManagerId() == "")
+            {
+                project->setManager(emp);
+                return;
+            }
+            else if (project->getManagerId() == emp->getCompanyId())
+            {
+                project->setManager(emp);
+                return;
+            }
         }
         return;
         
@@ -35,7 +44,7 @@ void ProjectCycle::addEmployee(SmartPtr<Employee>& emp){
     {
         if (project->addProgrammer(emp))
         {
-            currentProjEmployees.emplace(emp->getId(), emp);
+            currentProjEmployees.emplace(emp->getCompanyId(), emp);
             return;
         }
     }
@@ -43,7 +52,7 @@ void ProjectCycle::addEmployee(SmartPtr<Employee>& emp){
     {
         if (project->addArtist(emp))
         {
-            currentProjEmployees.emplace(emp->getId(), emp);
+            currentProjEmployees.emplace(emp->getCompanyId(), emp);
         }
     }
 //    }
@@ -59,12 +68,6 @@ void ProjectCycle::addEmployee(SmartPtr<Employee>& emp){
     
 }
 
-void ProjectCycle::start()
-{
-    
-}
-
-
 void ProjectCycle::speedUp(){
     project->speedUp();
     if (project->getNeedToRemove())
@@ -72,7 +75,6 @@ void ProjectCycle::speedUp(){
         delete project;
         currentProjEmployees.clear();
     }
-
 }
 
 void ProjectCycle::checkFinishedEmployee()
@@ -80,6 +82,6 @@ void ProjectCycle::checkFinishedEmployee()
     for (map<string, SmartPtr<Employee>>::iterator it = currentProjEmployees.begin(); it != currentProjEmployees.end(); it++)
     {
         if (it->second->getIsEmployed())
-            currentProjEmployees.erase(it->second->getId());
+            currentProjEmployees.erase(it->second->getCompanyId());
     }
 }

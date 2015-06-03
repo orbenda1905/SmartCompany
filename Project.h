@@ -27,6 +27,7 @@ private:
 	string projectName;
     int programmersNumber;
 	int artistsNumber;
+    string managerId = "";
     bool fullyRecruit = false;
     bool needToRemove = false;
     bool managerOccupied = false;
@@ -41,7 +42,7 @@ private:
     
 
 public:
-	Project(string name, string id, int ttlHrs, int hrsLft, int progCnt, int artCnt, vector<string>& pFld,vector<string>& aFld);
+	Project(string name, string prId, int ttlHrs, int hrsLft, string mangr, int progCnt, int artCnt, vector<string>& pFld,vector<string>& aFld);
     ~Project();
 	int getArtistsNumber() const;
 	void setArtistsNumber(int artistsNumber);
@@ -75,6 +76,7 @@ public:
     void dismissEmployee(SmartPtr<Employee>& emp);
     bool getNeedToRemove();
     bool getManagerOccupied();
+    string getManagerId();
 
 };
 

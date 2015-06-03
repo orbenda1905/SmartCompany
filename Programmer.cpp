@@ -30,7 +30,8 @@ vector<string>& Programmer::getKnowedLangs() {
 }
 
 Programmer::~Programmer() {
-	// TODO Auto-generated destructor stub
+    knowedLangs.clear();
+    fields.clear();
 }
 
 void Programmer::setKnowedLangs(vector<string> langs) {

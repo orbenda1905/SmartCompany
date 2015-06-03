@@ -18,7 +18,7 @@ Manager::Manager(const string Name, const string pId, const string phNum, string
 }
 
 Manager::~Manager() {
-	// TODO Auto-generated destructor stub
+	
 }
 
 void Manager::Printmanger(){

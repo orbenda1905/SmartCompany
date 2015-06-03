@@ -35,7 +35,6 @@ public:
 	void setExperience(int experience);
 	int getHoursPerDay() const;
 	void setHoursPerDay(int hoursPerDay);
-	bool isIsEmployed() const;
 	void setIsEmployed(bool isEmployed);
 	int getTotalHours() const;
 	void setTotalHours(int totalHours);

@@ -36,5 +36,5 @@ bool Client::getProjFinished()
 
 void Client::setProjFinished(bool status)
 {
-    projFinished = true;
+    projFinished = status;
 }
