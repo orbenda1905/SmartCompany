@@ -19,13 +19,17 @@ private:
 	int projEmployees;
     string& date;
 	map<string, SmartPtr<Employee>> currentProjEmployees;
+    bool stop = false;
 
 public:
-	ProjectCycle(SmartPtr<Project> project, string& data);
-    void addEmployee(SmartPtr<Employee>& emp);
-	virtual ~ProjectCycle();
+	ProjectCycle(SmartPtr<Project>& project, string& data);
+    void addEmployee(SmartPtr<Employee> emp);
+    virtual ~ProjectCycle();
+    SmartPtr<Project>& getProject();
     void checkFinishedEmployee();
     void speedUp();
+    void setStop(bool status);
+    void removeEmployee(string empId);
 };
 
 

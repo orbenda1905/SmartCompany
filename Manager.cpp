@@ -18,7 +18,7 @@ Manager::Manager(const string Name, const string pId, const string phNum, string
 }
 
 Manager::~Manager() {
-	
+    LogFile << "manager " + getCompanyId() + " destroyed" << endl;
 }
 
 void Manager::Printmanger(){
@@ -27,8 +27,5 @@ void Manager::Printmanger(){
     Artist::printFields();
     cout << "Projects amount: " << projCount << endl;
     LogFile << "Projects amount: " << projCount << endl;
-    
-    
-    
-}//sometjing
+}
 

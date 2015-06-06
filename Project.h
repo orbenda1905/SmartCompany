@@ -42,14 +42,14 @@ private:
     
 
 public:
-	Project(string name, string prId, int ttlHrs, int hrsLft, string mangr, int progCnt, int artCnt, vector<string>& pFld,vector<string>& aFld);
+	Project(string name, string prId, int ttlHrs, int hrsLft, string mangr, int progCnt, int artCnt, vector<string> pFld,vector<string> aFld);
     ~Project();
 	int getArtistsNumber() const;
 	void setArtistsNumber(int artistsNumber);
 	const vector<string>& getArtWorkField() const;
-	void setArtWorkField(vector<string>& artWorkField);
+	void setArtWorkField(vector<string> artWorkField);
 	const SmartPtr<Client>& getClient() const;
-	void setClient(const SmartPtr<Client>& client);
+	void setClient(const SmartPtr<Client> client);
 	int getHoursLeft() const;
 	void setHoursLeft(int hoursLeft);
     SmartPtr<Employee>& getManager();
@@ -57,10 +57,10 @@ public:
 	int getProgrammersNumber() const;
 	void setProgrammersNumber(int programmersNumber);
 	const vector<string>& getProgWorkField() const;
-	void setProgWorkField(vector<string>& progWorkField);
+	void setProgWorkField(vector<string> progWorkField);
 	const string& getProjectName() const;
-	void setProjectName(const string& projectName);
-	const string& getProjId() const;
+	void setProjectName(const string projectName);
+    string& getProjId();
 	int getTotalHours() const;
 	void setTotalHours(int totalHours);
 	void speedUp();
@@ -77,6 +77,10 @@ public:
     bool getNeedToRemove();
     bool getManagerOccupied();
     string getManagerId();
+    void setManagerOccupied(bool status);
+    void boost10Days(SmartPtr<Employee>& emp);
+    void print();
+    bool removeEmployee(string empId);
 
 };
 

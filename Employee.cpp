@@ -99,8 +99,8 @@ bool Employee::getIsEmployed()
 void Employee::printEmployee()
 {
     PrintPerson();
-    cout << "\nCompany ID: " << companyId << endl;
-    cout << "Priject ID: " << currentProjectId << endl;
+    cout << "Company ID: " << companyId << endl;
+    cout << "Project ID: " << currentProjectId << endl;
     cout << "So far project hours: " << soFarProjHours << endl;
     cout << "Needed project hours: " << neededProjectHours << endl;
     cout << "Total hours: " << totalHours << endl;
@@ -109,7 +109,7 @@ void Employee::printEmployee()
     cout << "Hours per day: " << hoursPerDay << endl;
     
     LogFile << "Company ID: " << companyId << endl;
-    LogFile << "Priject ID: " << currentProjectId << endl;
+    LogFile << "Project ID: " << currentProjectId << endl;
     LogFile << "So far project hours: " << soFarProjHours << endl;
     LogFile << "Needed project hours: " << neededProjectHours << endl;
     LogFile << "Total hours: " << totalHours << endl;

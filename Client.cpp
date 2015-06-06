@@ -7,7 +7,7 @@
 
 #include "Client.h"
 
-Client::Client(const string Name, const string pId, const string phNum, int tProjects, string curProjId) : Person(Name, pId, phNum)
+Client::Client(const string Name, const string pId, const string phNum,string curProjId, int tProjects) : Person(Name, pId, phNum)
 {
 	
 	totalProjects = tProjects;
@@ -16,17 +16,17 @@ Client::Client(const string Name, const string pId, const string phNum, int tPro
 }
 
 Client::~Client() {
-	// TODO Auto-generated destructor stub
+    LogFile << "client " + getId() + " destroyed" << endl;
 }
 
 void Client::PrintClient(){
     PrintPerson();
     
-    cout<<"\nclient total projects:"<<totalProjects<<endl;
-    cout<<"The client current project"<<currentProjectId<<endl;
+    cout<<"client total projects: "<<totalProjects<<endl;
+    cout<<"The client current project "<<currentProjectId<<endl;
     
-    LogFile<<"\nclient total projects:"<<totalProjects<<endl;
-    LogFile<<"The client current project"<<currentProjectId<<endl;
+    LogFile<<"client total projects: "<<totalProjects<<endl;
+    LogFile<<"The client current project "<<currentProjectId<<endl;
 }
 
 bool Client::getProjFinished()
@@ -34,7 +34,17 @@ bool Client::getProjFinished()
     return projFinished;
 }
 
+string& Client::getProjectId()
+{
+    return currentProjectId;
+}
+
 void Client::setProjFinished(bool status)
 {
     projFinished = status;
+}
+
+void Client::incTotalProjects()
+{
+    totalProjects++;
 }

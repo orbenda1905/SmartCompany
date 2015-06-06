@@ -13,15 +13,17 @@
 #include <fstream>
 using namespace std;
 class WriteToFile{
+    
 protected:
 
-    static ofstream& LogFile;
-    
+    static fstream LogFile;
+
 public:
     WriteToFile();
     ~WriteToFile();
     
 };
+
 
 
 #endif /* defined(__SmartPtr__WriteToFile__) */

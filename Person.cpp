@@ -42,12 +42,12 @@ Person::~Person() {
 	// TODO Auto-generated destructor stub
 }
 
-//change check again and again
+
 void Person::PrintPerson()
 {
-    string temp = {"ID: " + id + "\nName: " + name + "\nPhone: " + phoneNumber};
-    cout << temp;
-    LogFile << temp;
+    string temp = "ID: " + id + "\nName: " + name + "\nPhone: " + phoneNumber;
+    cout << temp << endl;
+    LogFile << temp << endl;
 }
 
 

@@ -121,7 +121,7 @@ public:
     T *GetPtr() const
     {
         if(m_refcount==NULL) return NULL;
-            return m_refcount->GetPtr();
+        return m_refcount->GetPtr();
     }
 
     // assign another smart pointer

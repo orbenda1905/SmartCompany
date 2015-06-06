@@ -32,6 +32,8 @@ vector<string>& Programmer::getKnowedLangs() {
 Programmer::~Programmer() {
     knowedLangs.clear();
     fields.clear();
+    LogFile << "programmer " + getCompanyId() + " destroyed" << endl;
+    cout << "programmer " + getCompanyId() + " destroyed" << endl;
 }
 
 void Programmer::setKnowedLangs(vector<string> langs) {
@@ -53,14 +55,16 @@ void Programmer::printFields()
     LogFile << "Languages: ";
     for (int i = 0; i < knowedLangs.size(); i++)
     {
-        cout << knowedLangs[i] << endl;
-        LogFile << knowedLangs[i] << endl;
+        cout << knowedLangs[i] + " ";
+        LogFile << knowedLangs[i] + " ";
     }
-    cout << "Fields: ";
-    LogFile << "Fields: ";
+    cout << "\nFields: ";
+    LogFile << "\nFields: ";
     for (int i = 0; i < fields.size(); i++)
     {
-        cout << fields[i] << endl;
-        LogFile << fields[i] << endl;
+        cout << fields[i] + " ";
+        LogFile << fields[i] + " ";
     }
+    LogFile << endl;
+    cout << endl;
 }

@@ -20,6 +20,7 @@ Artist::Artist(const string Name, const string pId, const string phNum, string c
 
 Artist::~Artist() {
     fields.clear();
+    LogFile << "artist " + getCompanyId() + " destroyed" << endl;
 }
 
 
@@ -43,10 +44,12 @@ void  Artist::printArtist()
 void Artist::printFields()
 {
     cout<<"Fields:"<<endl;
-    LogFile << "Fields: " << endl;
+    LogFile << "Fields: ";;
     for (int i=0; i<fields.size();i++){
         cout << fields[i] << endl;
-        LogFile << fields[i] << endl;
+        LogFile << fields[i] + " ";
     }
+    LogFile << endl;
+    cout << endl;
 }
 

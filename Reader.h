@@ -19,7 +19,7 @@
 using namespace std;
 
 
-class Reader {
+class Reader : WriteToFile{
 private:
     ifstream myFile;
     SmartPtr<Company> company;
@@ -38,7 +38,8 @@ public:
     void MakeProject();
     void MakeProjectCycle();
     void MakeEmployee();
-    SmartPtr<Company> getCompany();
+    SmartPtr<Company>& getCompany();
+    void startSimulate(string fileName);
 };
 
 

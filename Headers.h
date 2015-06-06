@@ -14,12 +14,6 @@
 #include "SmartPtr.h"
 //#include "WriteToFile.h"
 using namespace std;
-
-typedef enum FieldProg {FEND, SEC, MBL, BEND} FieldProg;
-typedef enum FieldArt {TwoD, ThreeD, MSC, CRTV} FieldArt;
-typedef enum ProgLang {C, CPP, JAVA, HTML} ProgLang;
-
-
-
+extern ofstream LogFile;
 
 #endif /* HEADERS_H_ */

@@ -18,10 +18,12 @@ private:
 	string currentProjectId;
     bool projFinished = false;
 public:
-	Client(const string Name, const string pId, const string phNum, int tProjects, string curProjId);
+	Client(const string Name, const string pId, const string phNum, string curProjId, int tProjects);
 	virtual ~Client();
     void PrintClient();
     bool getProjFinished();
+    void incTotalProjects();
+    string& getProjectId();
     void setProjFinished(bool status);
 
 };

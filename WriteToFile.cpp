@@ -9,18 +9,17 @@
 
 #include "WriteToFile.h"
 
-static ofstream output("Logger.txt", ios_base::app);
+//static ofstream output("Logger.txt", ios::app);
 
-ofstream& WriteToFile::LogFile = output;
+
+fstream WriteToFile::LogFile("logger.txt", ios::app);
 
 
 WriteToFile::WriteToFile(){
-
+    
 
 };
 
 WriteToFile::~WriteToFile(){
     
-    LogFile.close();
-
 }

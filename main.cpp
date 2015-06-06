@@ -11,9 +11,12 @@
 #include "SmartPtr.h"
 #include "Reader.h"
 
+
 int main()
 {
     Reader *read = new Reader("SampleInput.txt");
     read->ReadData();
-    SmartPtr<Company> company = read->getCompany();
+    read->getCompany()->startArrange();
+    read->startSimulate("SampleSimulation.txt");
+    delete read;
 }
